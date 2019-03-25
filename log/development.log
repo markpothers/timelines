@@ -4810,3 +4810,21 @@ Did you mean?  start_date
   
 app/views/positions/index.html.erb:16:in `block in _app_views_positions_index_html_erb__3327478745962525325_70300793754600'
 app/views/positions/index.html.erb:4:in `_app_views_positions_index_html_erb__3327478745962525325_70300793754600'
+Started GET "/positions/new" for ::1 at 2019-03-25 16:49:06 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+Processing by PositionsController#new as HTML
+  Rendering positions/new.html.erb within layouts/application
+  Rendered positions/_form.html.erb (1610.9ms)
+  Rendered positions/new.html.erb within layouts/application (1615.0ms)
+Completed 200 OK in 1976ms (Views: 1922.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/positions/new" for ::1 at 2019-03-25 16:50:25 -0500
+Processing by PositionsController#new as HTML
+  Rendering positions/new.html.erb within layouts/application
+  Rendered positions/_form.html.erb (3.7ms)
+  Rendered positions/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 38ms (Views: 34.9ms | ActiveRecord: 0.0ms)
+
+

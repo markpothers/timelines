@@ -1,9 +1,10 @@
 <h1><%=@city.name%></h1>
 <ul>
     <li>
-      <%= city.name%>, <%=@city.region%>, <%=@city.country%>
-    </li>
-    <li>
-      <%= city.description%>
+      <%= @city.name%>, <%=@city.region%>, <%=@city.country%>
     </li>
 </ul>
+
+<%=form_tag("/cities/#{@city.id}/edit", method: "get") do |f| %>
+<%=submit_tag "Edit"%>
+<%end%>

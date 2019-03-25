@@ -2,21 +2,25 @@
 
   <ul>
     <li>
-      <%= position.person.name%>
+      <%= @position.person.name%>
     </li>
     <li>
-      <%= position.city.name%>
+      <%= @position.city.name%>
     </li>
     <li>
-      <%= position.employer.name%>
+      <%= @position.employer.name%>
     <li>
     </li>
-    <%= position.description%>
+    <%= @position.description%>
     </li>
     <li>
-      <%= position.startdate%>
+      <%= @position.start_date%>
     </li>
     <li>
-      <%= position.finishdate%>
+      <%= @position.finish_date%>
     </li>
   </ul>
+
+<%=form_tag("/positions/#{@position.id}/edit", method: "get") do |f| %>
+<%=submit_tag "Edit"%>
+<%end%>

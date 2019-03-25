@@ -2,6 +2,10 @@
 
   <ul>
     <li>
-      <%= person.birthday%>
+      <%= @person.birthday%>
     </li>
   </ul>
+
+<%=form_tag("/people/#{@person.id}/edit", method: "get") do |f| %>
+<%=submit_tag "Edit"%>
+<%end%>

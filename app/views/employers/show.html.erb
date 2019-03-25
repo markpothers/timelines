@@ -2,15 +2,19 @@
 
   <ul>
     <li>
-      <%= employer.industry%>
+      <%= @employer.industry%>
     </li>
     <li>
-      <%= employer.size%>
+      <%= @employer.size%>
     </li>
     <li>
-      <%= employer.products%>
+      <%= @employer.products%>
     </li>
     <li>
-      <%= employer.description%>
+      <%= @employer.description%>
     </li>
   </ul>
+
+<%=form_tag("/employers/#{@employer.id}/edit", method: "get") do |f| %>
+<%=submit_tag "Edit"%>
+<%end%>

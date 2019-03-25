@@ -3,17 +3,20 @@
   <ul>
     <% @positions.each do |position|%>
       <li>
-        <strong><%= position.title%></strong>
+        <strong><%= link_to position.title, position_path(position)%></strong>
       </li>
         <ul>
           <li>
-            <%= position.person.name%>
+            <%= link_to position.person.name, person_path(position.person)%>
+          </li>
+          <li>
+            <%= link_to position.employer.name, employer_path(position.employer)%>
           </li>
           <li>
             <%= position.description%>
           </li>
           <li>
-            From: <%= position.startdate%>, until: <%=position.finishdate%>
+            From: <%= position.start_date%>, until: <%=position.finish_date%>
           </li>
         </ul>
     <%end%>

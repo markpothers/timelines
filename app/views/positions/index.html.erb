@@ -1,0 +1,20 @@
+<h1>Positions list:</h1>
+
+  <ul>
+    <% @positions.each do |position|%>
+      <li>
+        <strong><%= position.title%></strong>
+      </li>
+        <ul>
+          <li>
+            <%= position.person.name%>
+          </li>
+          <li>
+            <%= position.description%>
+          </li>
+          <li>
+            From: <%= position.startdate%>, until: <%=position.finishdate%>
+          </li>
+        </ul>
+    <%end%>
+  </ul>

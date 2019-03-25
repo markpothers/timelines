@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyString
+  start_date: 2019-03-25 16:01:31
+  finish_date: 2019-03-25 16:01:31
+  person: one
+  employer: one
+  city: one
+
+two:
+  title: MyString
+  description: MyString
+  start_date: 2019-03-25 16:01:31
+  finish_date: 2019-03-25 16:01:31
+  person: two
+  employer: two
+  city: two

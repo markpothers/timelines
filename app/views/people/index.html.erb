@@ -1,0 +1,14 @@
+<h1>People list:</h1>
+
+  <ul>
+    <% @people.each do |person|%>
+      <li>
+        <strong><%= person.name%></strong>
+      </li>
+        <ul>
+          <li>
+            <%= person.birthday%>
+          </li>
+        </ul>
+    <%end%>
+  </ul>

@@ -1,0 +1,8 @@
+<h1>Cities list:</h1>
+<ul>
+  <% @cities.each do |city|%>
+    <li>
+      <%= city.name%>, <%=@city.region%>, <%=@city.country%>
+    </li>
+  <%end%>
+</ul>

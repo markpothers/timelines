@@ -1,0 +1,23 @@
+<h1>Employers list:</h1>
+
+  <ul>
+    <% @employers.each do |employer|%>
+      <li>
+        <strong><%= employer.name%></strong>
+      </li>
+        <ul>
+          <li>
+            <%= employer.industry%>
+          </li>
+          <li>
+            <%= employer.size%>
+          </li>
+          <li>
+            <%= employer.products%>
+          </li>
+          <li>
+            <%= employer.description%>
+          </li>
+        </ul>
+    <%end%>
+  </ul>

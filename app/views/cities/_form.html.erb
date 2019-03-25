@@ -1,0 +1,17 @@
+<%= form_with(model: @city) do |f|%>
+  <div>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br><br>
+  </div>
+  <div>
+  <%= f.label :region %>
+  <%= f.text_field :region %><br><br>
+  </div>
+  <div>
+  <%= f.label :name %>
+  <%= f.text_field :country %><br><br>
+  </div>
+  <div>
+  <%= f.submit %>
+  </div>
+<%end%>

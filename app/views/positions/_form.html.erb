@@ -1,0 +1,25 @@
+<%= form_with(model: @employer) do |f|%>
+  <div>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br><br>
+  </div>
+  <div>
+  <%= f.label :industry %>
+  <%= f.text_field :industry %><br><br>
+  </div>
+  <div>
+  <%= f.label :size %>
+  <%= f.text_field :size %><br><br>
+  </div>
+  <div>
+  <%= f.label :description %>
+  <%= f.text_field :description %><br><br>
+  </div>
+  <div>
+  <%= f.label :products %>
+  <%= f.text_field :products %><br><br>
+  </div>
+  <div>
+  <%= f.submit %>
+  </div>
+<%end%>

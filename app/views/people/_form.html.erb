@@ -1,0 +1,13 @@
+<%= form_with(model: @person) do |f|%>
+  <div>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br><br>
+  </div>
+  <div>
+  <%= f.label :birthday %>
+  <%= f.text_field :birthday %><br><br>
+  </div>
+  <div>
+  <%= f.submit %>
+  </div>
+<%end%>

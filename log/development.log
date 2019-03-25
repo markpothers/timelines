@@ -150,3 +150,54 @@ Processing by PeopleController#new as HTML
 Completed 200 OK in 311ms (Views: 288.2ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/cities/new" for ::1 at 2019-03-25 16:27:45 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+Processing by CitiesController#new as HTML
+  Rendering cities/new.html.erb within layouts/application
+  Rendered cities/_form.html.erb (18.8ms)
+  Rendered cities/new.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 334ms (Views: 307.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/employers/new" for ::1 at 2019-03-25 16:27:53 -0500
+Processing by EmployersController#new as HTML
+  Rendering employers/new.html.erb within layouts/application
+  Rendered employers/_form.html.erb (19.4ms)
+  Rendered employers/new.html.erb within layouts/application (24.2ms)
+Completed 200 OK in 107ms (Views: 51.1ms | ActiveRecord: 2.7ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to ChangeEmployersColumnName (20190325213657)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/flatironschool/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190325213657_change_employers_column_name.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aemployers" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "industry" varchar DEFAULT NULL, "size" varchar DEFAULT NULL, "description" varchar DEFAULT NULL, "products" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190325213657_change_employers_column_name.rb:3
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "aemployers" ("id","name","industry","size","description","products","created_at","updated_at")
+                     SELECT "id","name","indsutry","size","description","products","created_at","updated_at" FROM "employers"[0m
+  ↳ db/migrate/20190325213657_change_employers_column_name.rb:3
+  [1m[35m (6.3ms)[0m  [1m[35mDROP TABLE "employers"[0m
+  ↳ db/migrate/20190325213657_change_employers_column_name.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "employers" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "industry" varchar DEFAULT NULL, "size" varchar DEFAULT NULL, "description" varchar DEFAULT NULL, "products" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190325213657_change_employers_column_name.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "employers" ("id","name","industry","size","description","products","created_at","updated_at")
+                     SELECT "id","name","industry","size","description","products","created_at","updated_at" FROM "aemployers"[0m
+  ↳ db/migrate/20190325213657_change_employers_column_name.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aemployers"[0m
+  ↳ db/migrate/20190325213657_change_employers_column_name.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190325213657"]]
+  ↳ /Users/flatironschool/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/flatironschool/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/flatironschool/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/flatironschool/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/flatironschool/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273

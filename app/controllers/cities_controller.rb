@@ -13,7 +13,7 @@ class CitiesController < ApplicationController
   end
 
   def create
-    @city = City.new
+    @city = City.new(city_params)
       if @city.save
         redirect_to city_path(@city)
       else

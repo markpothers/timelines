@@ -3,7 +3,7 @@
   <ul>
     <% @employers.each do |employer|%>
       <li>
-        <strong><%= employer.name%></strong>
+        <strong><%= link_to employer.name, employer_path(employer)%></strong>
       </li>
         <ul>
           <li>

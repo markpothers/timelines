@@ -2,7 +2,7 @@
 <ul>
   <% @cities.each do |city|%>
     <li>
-      <%= city.name%>, <%=city.region%>, <%=city.country%>
+      <%= link_to city.name, city_path(city)%>, <%=city.region%>, <%=city.country%>
     </li>
   <%end%>
 </ul>

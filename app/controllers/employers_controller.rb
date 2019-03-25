@@ -13,7 +13,7 @@ class EmployersController < ApplicationController
   end
 
   def create
-    @employer = Employer.new
+    @employer = Employer.new(employer_params)
       if @employer.save
         redirect_to employer_path(@employer)
       else

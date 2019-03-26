@@ -1,33 +1,39 @@
 <%= form_with(model: @position) do |f|%>
   <div>
-        <%= f.fields_for :person do |p| %>
-          Person <%= p.label :name %>
-          <%= p.text_field :name, list: "people_autocomplete" %><br><br>
-          <datalist id="people_autocomplete">
-            <%= @people.each do |person|%>
-            <option value="<%=person.name%>">
-          <%end%>
-        <%end%>
+    Person <%= f.label :person %>
+      <%if @position.person%>
+      <%= f.text_field :person, list: "people_autocomplete", value: @position.person.name%><br><br>
+      <%else%>
+      <%= f.text_field :person, list: "people_autocomplete", value: ''%><br><br>
+      <%end%>
+      <datalist id="people_autocomplete">
+      <%= @people.each do |person|%>
+        <option value="<%=person.name%>">
+      <%end%>
   </div>
   <div>
-        <%= f.fields_for :employer do |employer| %>
-          Employer <%= employer.label :name %>
-          <%= employer.text_field :name, list: "employers_autocomplete" %><br><br>
-          <datalist id="employers_autocomplete">
-          <%= @employers.each do |employer|%>
-            <option value="<%=employer.name%>">
-          <%end%>
-        <%end%>
+    Employer <%= f.label :employer %>
+      <%if @position.employer%>
+      <%= f.text_field :employer, list: "employers_autocomplete", value: @position.employer.name%><br><br>
+      <%else%>
+      <%= f.text_field :employer, list: "employers_autocomplete", value: ''%><br><br>
+      <%end%>
+      <datalist id="employers_autocomplete">
+      <%= @employers.each do |employer|%>
+        <option value="<%=employer.name%>">
+      <%end%>
   </div>
   <div>
-        <%= f.fields_for :city do |city| %>
-          City <%= city.label :name %>
-          <%= city.text_field :name, list: "cities_autocomplete" %><br><br>
-          <datalist id="cities_autocomplete">
-          <%= @cities.each do |city|%>
-            <option value="<%=city.name%>">
-          <%end%>
-        <%end%>
+    City <%= f.label :city %>
+      <%if @position.city%>
+      <%= f.text_field :city, list: "cities_autocomplete", value: @position.city.name %><br><br>
+      <%else%>
+      <%= f.text_field :city, list: "cities_autocomplete", value: '' %><br><br>
+      <%end%>
+      <datalist id="cities_autocomplete">
+      <%= @cities.each do |city|%>
+        <option value="<%=city.name%>">
+      <%end%>
   </div>
   <div>
   Position <%= f.label :title %>

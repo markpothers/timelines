@@ -2,13 +2,13 @@
 
   <ul>
     <li>
-      <%= @position.person.name%>
+      <%= link_to @position.person.name, person_path(@position.person)%>
     </li>
     <li>
-      <%= @position.city.name%>
+      <%= link_to @position.city.name, city_path(@position.city)%>
     </li>
     <li>
-      <%= @position.employer.name%>
+      <%= link_to @position.employer.name, employer_path(@position.employer)%>
     <li>
     </li>
     <%= @position.description%>

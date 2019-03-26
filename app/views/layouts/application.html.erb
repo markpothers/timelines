@@ -17,17 +17,32 @@
       <%=form_tag("/cities", method: "get") do |f| %>
         <%=submit_tag "Cities"%>
       <%end%>
+      <%=form_tag("/cities/new", method: "get") do |f| %>
+        <%=submit_tag "New City"%>
+      <%end%>
       <%=form_tag("/people", method: "get") do |f| %>
         <%=submit_tag "People"%>
+      <%end%>
+      <%=form_tag("/people/new", method: "get") do |f| %>
+        <%=submit_tag "New Person"%>
       <%end%>
       <%=form_tag("/employers", method: "get") do |f| %>
         <%=submit_tag "Employers"%>
       <%end%>
+      <%=form_tag("/employers/new", method: "get") do |f| %>
+        <%=submit_tag "New Employer"%>
+      <%end%>
       <%=form_tag("/positions", method: "get") do |f| %>
         <%=submit_tag "Positions"%>
       <%end%>
+      <%=form_tag("/positions/new", method: "get") do |f| %>
+        <%=submit_tag "New Position"%>
+      <%end%>
       <%=form_tag("/events", method: "get") do |f| %>
         <%=submit_tag "Events"%>
+      <%end%>
+      <%=form_tag("/events/new", method: "new") do |f| %>
+        <%=submit_tag "New Event"%>
       <%end%>
   </body>
 </html>

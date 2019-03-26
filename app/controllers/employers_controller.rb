@@ -38,7 +38,7 @@ class EmployersController < ApplicationController
   def destroy
     @employer = Employer.find(params[:id])
     @employer.destroy
-    redirect_to index
+    redirect_to employers_path
   end
 
   private

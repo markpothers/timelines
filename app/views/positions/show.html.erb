@@ -24,3 +24,6 @@
 <%=form_tag("/positions/#{@position.id}/edit", method: "get") do |f| %>
 <%=submit_tag "Edit"%>
 <%end%>
+<%=form_tag("/positions/#{@position.id}", method: "delete") do |f| %>
+  <%=submit_tag "Delete"%>
+<%end%>

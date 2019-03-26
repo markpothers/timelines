@@ -38,7 +38,7 @@ class PositionsController < ApplicationController
   def destroy
     @position = Position.find(params[:id])
     @position.destroy
-    redirect_to index
+    redirect_to positions_path
   end
 
   private

@@ -11,5 +11,23 @@
 
   <body>
     <%= yield %>
+
+
+      <br>
+      <%=form_tag("/cities", method: "get") do |f| %>
+        <%=submit_tag "Cities"%>
+      <%end%>
+      <%=form_tag("/people", method: "get") do |f| %>
+        <%=submit_tag "People"%>
+      <%end%>
+      <%=form_tag("/employers", method: "get") do |f| %>
+        <%=submit_tag "Employers"%>
+      <%end%>
+      <%=form_tag("/positions", method: "get") do |f| %>
+        <%=submit_tag "Positions"%>
+      <%end%>
+      <%=form_tag("/events", method: "get") do |f| %>
+        <%=submit_tag "Events"%>
+      <%end%>
   </body>
 </html>

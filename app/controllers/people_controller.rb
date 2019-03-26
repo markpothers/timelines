@@ -38,7 +38,7 @@ class PeopleController < ApplicationController
   def destroy
     @person = Person.find(params[:id])
     @person.destroy
-    redirect_to index
+    redirect_to people_path
   end
 
   private

@@ -1,0 +1,20 @@
+<h1>Events list:</h1>
+
+  <ul>
+    <% @events.each do |event|%>
+      <li>
+        <strong><%= link_to event.title, event_path(event)%></strong>
+      </li>
+        <ul>
+          <li>
+            <%= link_to event.person.name, person_path(event.person)%>
+          </li>
+          <li>
+            <%= event.description%>
+          </li>
+          <li>
+            From: <%= event.start_date%>, until: <%=event.finish_date%>
+          </li>
+        </ul>
+    <%end%>
+  </ul>

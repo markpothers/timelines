@@ -6,6 +6,27 @@
     </li>
   </ul>
 
+  <h3>Personal Timeline:</h3>
+  <ul>
+    <% @person.positions.each do |p| %>
+      <li>
+        <%= p.title %>: from <%= p.start_date.year %>, until <%= p.finish_date.year %>, in <%= p.city.name %>
+      </li>
+      <%end%>
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <%=form_tag("/people/#{@person.id}/delete", method: "get") do |f| %>
   <%=submit_tag "Edit"%>
 <%end%>

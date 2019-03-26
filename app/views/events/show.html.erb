@@ -1,0 +1,26 @@
+<h1><%=@event.title%></h1>
+
+  <ul>
+    <li>
+      <%= link_to @event.person.name, person_path(@event.person)%>
+    </li>
+    <li>
+      <%= link_to @event.city.name, city_path(@event.city)%>
+    </li>
+    </li>
+    <%= @event.description%>
+    </li>
+    <li>
+      <%= @event.start_date%>
+    </li>
+    <li>
+      <%= @event.finish_date%>
+    </li>
+  </ul>
+
+<%=form_tag("/events/#{@event.id}/edit", method: "get") do |f| %>
+<%=submit_tag "Edit"%>
+<%end%>
+<%=form_tag("/events/#{@event.id}", method: "delete") do |f| %>
+  <%=submit_tag "Delete"%>
+<%end%>

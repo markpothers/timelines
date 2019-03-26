@@ -1,23 +1,45 @@
-<%= form_with(model: @employer) do |f|%>
+<%= form_with(model: @position) do |f|%>
   <div>
-  <%= f.label :name %>
-  <%= f.text_field :name %><br><br>
+        <%= f.fields_for :person do |person| %>
+          Person <%= person.label :name %>
+          <%= f.text_field :person, list: "people_autocomplete" %><br><br>
+          <datalist id="people_autocomplete">
+            <%= @people.each do |person|%>
+            <option value="<%=person.name%>">
+          <%end%>
+        <%end%>
   </div>
   <div>
-  <%= f.label :industry %>
-  <%= f.text_field :industry %><br><br>
+        <%= f.fields_for :employer do |employer| %>
+          Employer <%= employer.label :name %>
+          <%= f.text_field :employer, list: "employers_autocomplete" %><br><br>
+          <datalist id="employers_autocomplete">
+          <%= @employers.each do |employer|%>
+            <option value="<%=employer.name%>">
+          <%end%>
+        <%end%>
   </div>
   <div>
-  <%= f.label :size %>
-  <%= f.text_field :size %><br><br>
+        <%= f.fields_for :city do |city| %>
+          City <%= city.label :name %>
+          <%= f.text_field :city, list: "cities_autocomplete" %><br><br>
+          <datalist id="cities_autocomplete">
+          <%= @cities.each do |city|%>
+            <option value="<%=city.name%>">
+          <%end%>
+        <%end%>
   </div>
   <div>
-  <%= f.label :description %>
-  <%= f.text_field :description %><br><br>
+  Position <%= f.label :title %>
+  <%= f.text_field :title %><br><br>
   </div>
   <div>
-  <%= f.label :products %>
-  <%= f.text_field :products %><br><br>
+  Position <%= f.label :start_date %>
+  <%= f.text_field :start_date %><br><br>
+  </div>
+  <div>
+  Position <%= f.label :finish_date %>
+  <%= f.text_field :finish_date %><br><br>
   </div>
   <div>
   <%= f.submit %>

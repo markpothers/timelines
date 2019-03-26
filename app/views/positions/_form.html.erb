@@ -1,8 +1,8 @@
 <%= form_with(model: @position) do |f|%>
   <div>
-        <%= f.fields_for :person do |person| %>
-          Person <%= person.label :name %>
-          <%= f.text_field :person, list: "people_autocomplete" %><br><br>
+        <%= f.fields_for :person do |p| %>
+          Person <%= p.label :name %>
+          <%= p.text_field :name, list: "people_autocomplete" %><br><br>
           <datalist id="people_autocomplete">
             <%= @people.each do |person|%>
             <option value="<%=person.name%>">
@@ -12,7 +12,7 @@
   <div>
         <%= f.fields_for :employer do |employer| %>
           Employer <%= employer.label :name %>
-          <%= f.text_field :employer, list: "employers_autocomplete" %><br><br>
+          <%= employer.text_field :name, list: "employers_autocomplete" %><br><br>
           <datalist id="employers_autocomplete">
           <%= @employers.each do |employer|%>
             <option value="<%=employer.name%>">
@@ -22,7 +22,7 @@
   <div>
         <%= f.fields_for :city do |city| %>
           City <%= city.label :name %>
-          <%= f.text_field :city, list: "cities_autocomplete" %><br><br>
+          <%= city.text_field :name, list: "cities_autocomplete" %><br><br>
           <datalist id="cities_autocomplete">
           <%= @cities.each do |city|%>
             <option value="<%=city.name%>">

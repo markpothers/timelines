@@ -3,17 +3,17 @@ class Position < ApplicationRecord
   belongs_to :employer
   belongs_to :person
 
-  def person=(name)
-    self.person_id = Person.find_or_create_by(name: name).id
 
+  def person=(name)
+    self.person_id = Person.find_or_create_by(name).id
   end
 
   def employer=(name)
-    self.employer_id = Employer.find_or_create_by(name: name).id
+    self.employer_id = Employer.find_or_create_by(name).id
   end
 
   def city=(name)
-    self.city_id = City.find_or_create_by(name: name).id
+    self.city_id = City.find_or_create_by(name).id
   end
 
 end

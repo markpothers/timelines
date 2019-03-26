@@ -50,7 +50,11 @@ class PositionsController < ApplicationController
   private
 
   def position_params
-    params.require(:position).permit(:title, :start_date, :finish_date, :person, :employer, :city)
+    params.require(:position).permit(:title, :start_date, :finish_date, :person => [:name], :employer => [:name], :city => [:name])
   end
+
+  # def person_params
+  #   params.require(:position).require(:person).permit(:name)
+  # end
 
 end

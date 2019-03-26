@@ -2,21 +2,28 @@
 
   <ul>
     <li>
-      <%= position.person.name%>
+      <%= link_to @position.person.name, person_path(@position.person)%>
     </li>
     <li>
-      <%= position.city.name%>
+      <%= link_to @position.city.name, city_path(@position.city)%>
     </li>
     <li>
-      <%= position.employer.name%>
+      <%= link_to @position.employer.name, employer_path(@position.employer)%>
     <li>
     </li>
-    <%= position.description%>
+    <%= @position.description%>
     </li>
     <li>
-      <%= position.startdate%>
+      <%= @position.start_date%>
     </li>
     <li>
-      <%= position.finishdate%>
+      <%= @position.finish_date%>
     </li>
   </ul>
+
+<%=form_tag("/positions/#{@position.id}/edit", method: "get") do |f| %>
+<%=submit_tag "Edit"%>
+<%end%>
+<%=form_tag("/positions/#{@position.id}", method: "delete") do |f| %>
+  <%=submit_tag "Delete"%>
+<%end%>

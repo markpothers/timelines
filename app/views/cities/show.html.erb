@@ -4,3 +4,10 @@
       <%= @city.name%>, <%=@city.region%>, <%=@city.country%>
     </li>
 </ul>
+
+<%=form_tag("/cities/#{@city.id}/edit", method: "get") do |f| %>
+<%=submit_tag "Edit"%>
+<%end%>
+<%=form_tag("/cities/#{@city.id}", method: "delete") do |f| %>
+  <%=submit_tag "Delete"%>
+<%end%>

@@ -14,3 +14,10 @@
       <%= @employer.description%>
     </li>
   </ul>
+
+<%=form_tag("/employers/#{@employer.id}/edit", method: "get") do |f| %>
+<%=submit_tag "Edit"%>
+<%end%>
+<%=form_tag("/employers/#{@employer.id}", method: "delete") do |f| %>
+  <%=submit_tag "Delete"%>
+<%end%>

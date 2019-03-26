@@ -3,7 +3,7 @@
   <ul>
     <% @positions.each do |position|%>
       <li>
-        <strong><%= position.title%></strong>
+        <strong><%= link_to position.title, position_path(position)%></strong>
       </li>
         <ul>
           <li>

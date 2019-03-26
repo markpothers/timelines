@@ -16039,3 +16039,1411 @@ Completed 200 OK in 70ms (Views: 63.4ms | ActiveRecord: 1.5ms)
 >>>>>>> positionforms
 
 
+Started GET "/people" for ::1 at 2019-03-26 15:30:36 -0500
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (1.8ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:4
+  Rendered people/index.html.erb within layouts/application (24.4ms)
+Completed 200 OK in 458ms (Views: 427.2ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/people/51" for ::1 at 2019-03-26 15:30:39 -0500
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mPerson Load (0.5ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 51], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:8
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 86ms (Views: 72.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/people/51/delete?utf8=%E2%9C%93&commit=Edit" for ::1 at 2019-03-26 15:30:40 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/people/51/delete"):
+  
+actionpack (5.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/people/51/delete?utf8=%E2%9C%93&commit=Edit" for ::1 at 2019-03-26 15:30:45 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/people/51/delete"):
+  
+actionpack (5.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/people" for ::1 at 2019-03-26 15:30:59 -0500
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.6ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:4
+  Rendered people/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 40ms (Views: 37.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/positions" for ::1 at 2019-03-26 15:31:41 -0500
+Processing by PositionsController#index as HTML
+  Rendering positions/index.html.erb within layouts/application
+  [1m[36mPosition Load (3.9ms)[0m  [1m[34mSELECT "positions".* FROM "positions"[0m
+  ↳ app/views/positions/index.html.erb:4
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 82], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (1.8ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 59], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 82], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (1.4ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 47], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.5ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 51], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (1.2ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 96], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 85], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 56], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 94], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 94], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 59], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 57], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.3ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 97], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.2ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 97], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 57], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.5ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 51], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.2ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 78], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.6ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 91], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 88], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.2ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 80], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.3ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 79], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 54], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 56], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 94], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 98], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 97], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 81], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 99], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 57], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 62], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 75], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 51], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 94], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 84], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 95], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.2ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 78], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.2ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 95], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.2ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 78], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.2ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 81], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 98], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 97], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 56], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 75], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 99], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.2ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 51], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 53], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 81], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 62], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 54], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 87], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 88], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 97], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 96], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 78], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 57], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 57], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 82], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 78], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 80], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  Rendered positions/index.html.erb within layouts/application (347.4ms)
+Completed 200 OK in 396ms (Views: 353.7ms | ActiveRecord: 26.0ms)
+
+
+Started GET "/positions/2" for ::1 at 2019-03-26 15:31:44 -0500
+Processing by PositionsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPosition Load (2.4ms)[0m  [1m[34mSELECT  "positions".* FROM "positions" WHERE "positions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/positions_controller.rb:8
+  Rendering positions/show.html.erb within layouts/application
+  [1m[36mPerson Load (0.5ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 82], ["LIMIT", 1]]
+  ↳ app/views/positions/show.html.erb:5
+  [1m[36mCity Load (1.7ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/views/positions/show.html.erb:8
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/views/positions/show.html.erb:11
+  Rendered positions/show.html.erb within layouts/application (60.0ms)
+Completed 200 OK in 89ms (Views: 79.3ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/positions/2/edit?utf8=%E2%9C%93&commit=Edit" for ::1 at 2019-03-26 15:31:45 -0500
+Processing by PositionsController#edit as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Edit", "id"=>"2"}
+  [1m[36mPosition Load (0.2ms)[0m  [1m[34mSELECT  "positions".* FROM "positions" WHERE "positions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/positions_controller.rb:25
+  Rendering positions/edit.html.erb within layouts/application
+  Rendered positions/_form.html.erb (1500.3ms)
+  Rendered positions/edit.html.erb within layouts/application (1502.0ms)
+Completed 500 Internal Server Error in 1510ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    4:           Person <%= p.label :name %>
+    5:           <%= p.text_field :name, list: "people_autocomplete" %><br><br>
+    6:           <datalist id="people_autocomplete">
+    7:             <%= @people.each do |person|%>
+    8:             <option value="<%=person.name%>">
+    9:           <%end%>
+   10:         <%end%>
+  
+app/views/positions/_form.html.erb:7:in `block (2 levels) in _app_views_positions__form_html_erb___161275790284320476_70318547510740'
+app/views/positions/_form.html.erb:3:in `block in _app_views_positions__form_html_erb___161275790284320476_70318547510740'
+app/views/positions/_form.html.erb:1:in `_app_views_positions__form_html_erb___161275790284320476_70318547510740'
+app/views/positions/edit.html.erb:3:in `_app_views_positions_edit_html_erb__4443169859295022723_70318547449020'
+Started GET "/positions/new?utf8=%E2%9C%93&commit=New+Position" for ::1 at 2019-03-26 15:32:04 -0500
+Processing by PositionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"New Position"}
+  Rendering positions/new.html.erb within layouts/application
+  Rendered positions/_form.html.erb (3.7ms)
+  Rendered positions/new.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    4:           Person <%= p.label :name %>
+    5:           <%= p.text_field :name, list: "people_autocomplete" %><br><br>
+    6:           <datalist id="people_autocomplete">
+    7:             <%= @people.each do |person|%>
+    8:             <option value="<%=person.name%>">
+    9:           <%end%>
+   10:         <%end%>
+  
+app/views/positions/_form.html.erb:7:in `block (2 levels) in _app_views_positions__form_html_erb___161275790284320476_70318519347460'
+app/views/positions/_form.html.erb:3:in `block in _app_views_positions__form_html_erb___161275790284320476_70318519347460'
+app/views/positions/_form.html.erb:1:in `_app_views_positions__form_html_erb___161275790284320476_70318519347460'
+app/views/positions/new.html.erb:2:in `_app_views_positions_new_html_erb__1446377898725555461_70318572477580'
+Started GET "/people/new?utf8=%E2%9C%93&commit=New+Person" for ::1 at 2019-03-26 15:32:20 -0500
+Processing by PeopleController#new as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"New Person"}
+  Rendering people/new.html.erb within layouts/application
+  Rendered people/_form.html.erb (14.7ms)
+  Rendered people/new.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 50ms (Views: 45.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/positions?utf8=%E2%9C%93&commit=Positions" for ::1 at 2019-03-26 15:42:04 -0500
+Processing by PositionsController#index as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Positions"}
+  Rendering positions/index.html.erb within layouts/application
+  [1m[36mPosition Load (0.6ms)[0m  [1m[34mSELECT "positions".* FROM "positions"[0m
+  ↳ app/views/positions/index.html.erb:4
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 82], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.2ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 59], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 82], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 47], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.2ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 51], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 96], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 85], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.2ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 56], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.2ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 94], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 94], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.2ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.2ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 59], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 57], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.3ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 97], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.2ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 97], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 57], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.5ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 51], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 78], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 91], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 88], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.2ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.3ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.2ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 80], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 79], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 54], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 56], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 94], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 98], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 97], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 81], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 99], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 57], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 62], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.2ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 75], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 51], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 94], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 84], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 95], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.2ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.2ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 78], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.2ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 95], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 78], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.2ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 81], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 98], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 97], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.2ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 56], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 75], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 99], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 51], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 53], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 81], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 62], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 54], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 87], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 88], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 97], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 96], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 78], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 57], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 57], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 82], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 78], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 80], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.2ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  Rendered positions/index.html.erb within layouts/application (304.6ms)
+Completed 200 OK in 335ms (Views: 310.9ms | ActiveRecord: 17.5ms)
+
+
+Started GET "/positions/2" for ::1 at 2019-03-26 15:42:05 -0500
+Processing by PositionsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPosition Load (0.4ms)[0m  [1m[34mSELECT  "positions".* FROM "positions" WHERE "positions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/positions_controller.rb:8
+  Rendering positions/show.html.erb within layouts/application
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 82], ["LIMIT", 1]]
+  ↳ app/views/positions/show.html.erb:5
+  [1m[36mCity Load (0.7ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/views/positions/show.html.erb:8
+  [1m[36mEmployer Load (0.2ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/views/positions/show.html.erb:11
+  Rendered positions/show.html.erb within layouts/application (20.2ms)
+Completed 200 OK in 52ms (Views: 42.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/positions/2/edit?utf8=%E2%9C%93&commit=Edit" for ::1 at 2019-03-26 15:42:10 -0500
+Processing by PositionsController#edit as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Edit", "id"=>"2"}
+  [1m[36mPosition Load (0.4ms)[0m  [1m[34mSELECT  "positions".* FROM "positions" WHERE "positions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/positions_controller.rb:25
+  Rendering positions/edit.html.erb within layouts/application
+  Rendered positions/_form.html.erb (5.9ms)
+  Rendered positions/edit.html.erb within layouts/application (7.5ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    4:           Person <%= p.label :name %>
+    5:           <%= p.text_field :name, list: "people_autocomplete" %><br><br>
+    6:           <datalist id="people_autocomplete">
+    7:             <%= @people.each do |person|%>
+    8:             <option value="<%=person.name%>">
+    9:           <%end%>
+   10:         <%end%>
+  
+app/views/positions/_form.html.erb:7:in `block (2 levels) in _app_views_positions__form_html_erb___161275790284320476_70318570668280'
+app/views/positions/_form.html.erb:3:in `block in _app_views_positions__form_html_erb___161275790284320476_70318570668280'
+app/views/positions/_form.html.erb:1:in `_app_views_positions__form_html_erb___161275790284320476_70318570668280'
+app/views/positions/edit.html.erb:3:in `_app_views_positions_edit_html_erb__4443169859295022723_70318570656860'
+Started GET "/positions?utf8=%E2%9C%93&commit=Positions" for ::1 at 2019-03-26 15:42:51 -0500
+Processing by PositionsController#index as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Positions"}
+  Rendering positions/index.html.erb within layouts/application
+  [1m[36mPosition Load (0.8ms)[0m  [1m[34mSELECT "positions".* FROM "positions"[0m
+  ↳ app/views/positions/index.html.erb:4
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 82], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.2ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 59], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.2ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 82], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.2ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 47], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 51], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.3ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 96], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 85], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 56], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 94], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 94], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.4ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.2ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 59], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 57], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 97], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 97], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 57], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 51], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 78], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.5ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 91], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 88], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.2ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 80], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 79], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 54], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.2ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.2ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 56], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 94], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.2ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 98], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 97], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 81], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 99], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 57], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 62], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 75], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 51], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.4ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 94], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 84], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 95], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.3ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 78], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 95], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.2ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.2ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.2ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 78], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 81], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 98], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 97], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 56], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 75], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 99], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 51], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 53], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 81], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 62], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 54], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 87], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 88], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 97], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 96], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 78], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 57], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 57], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 82], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 78], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 80], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mEmployer Load (0.1ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:10
+  [1m[36mCACHE Employer Load (0.0ms)[0m  [1m[34mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT ?[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/views/positions/index.html.erb:13
+  Rendered positions/index.html.erb within layouts/application (306.1ms)
+Completed 200 OK in 335ms (Views: 316.3ms | ActiveRecord: 16.2ms)
+
+
+Started GET "/people/new?utf8=%E2%9C%93&commit=New+Person" for ::1 at 2019-03-26 15:42:54 -0500
+Processing by PeopleController#new as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"New Person"}
+  Rendering people/new.html.erb within layouts/application
+  Rendered people/_form.html.erb (3.7ms)
+  Rendered people/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 33ms (Views: 32.3ms | ActiveRecord: 0.0ms)
+
+

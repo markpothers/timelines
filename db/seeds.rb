@@ -8,6 +8,7 @@ Position.destroy_all
 50.times do 
     person = Person.create({
         name: Faker::Name.name,
+        birthday: Faker::Date.birthday(17, 65)
     })
 
     city = City.create({

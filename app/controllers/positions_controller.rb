@@ -34,7 +34,7 @@ class PositionsController < ApplicationController
   def update
     @position = Position.find(params[:id])
     @position.update_attributes(position_params)
-    if Position.save
+    if @position.save
       redirect_to position_path(@position)
     else
       redirect_to edit position_path(@position)
@@ -50,7 +50,7 @@ class PositionsController < ApplicationController
   private
 
   def position_params
-    params.require(:position).permit(:title, :start_date, :finish_date, :person => [:name], :employer => [:name], :city => [:name])
+    params.require(:position).permit(:title, :start_date, :finish_date, :person_attributes => [:name], :employer_attributes => [:name], :city_attributes => [:name])
   end
 
   # def person_params

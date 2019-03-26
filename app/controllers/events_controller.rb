@@ -10,10 +10,13 @@ class EventsController < ApplicationController
 
   def new
      @event = Event.new
+     @cities = City.all
+     @people = Person.all
   end
 
   def create
-     @event = Event.new
+    byebug
+     @event = Event.new(event_params)
       if @event.save
         redirect_to event_path(@event)
       else
@@ -23,6 +26,8 @@ class EventsController < ApplicationController
 
   def edit
     @event = Event.find(params[:id])
+    @cities = City.all
+    @people = Person.all
   end
 
   def update
@@ -44,7 +49,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(event).permit(:title, :start_date, :finish_date, :person_id, :description, :city_id)
+    params.require(:event).permit(:title, :start_date, :finish_date, :description, :visitor => [:name], :destination => [:name])
   end
 
 end

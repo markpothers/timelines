@@ -41,7 +41,7 @@
       <%=form_tag("/events", method: "get") do |f| %>
         <%=submit_tag "Events"%>
       <%end%>
-      <%=form_tag("/events/new", method: "new") do |f| %>
+      <%=form_tag("/events/new", method: "get") do |f| %>
         <%=submit_tag "New Event"%>
       <%end%>
   </body>

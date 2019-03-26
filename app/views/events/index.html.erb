@@ -7,10 +7,13 @@
       </li>
         <ul>
           <li>
-            <%= link_to event.person.name, person_path(event.person)%>
+            <%= link_to event.visitor.name, person_path(event.visitor)%>
           </li>
           <li>
             <%= event.description%>
+          </li>
+          <li>
+            <%= link_to event.destination.name, city_path(event.destination)%>
           </li>
           <li>
             From: <%= event.start_date%>, until: <%=event.finish_date%>

@@ -1,0 +1,47 @@
+<%= form_with(model: @position) do |f|%>
+  <div>
+        <%= f.fields_for :person, Person.new do |p| %>
+          Person <%= p.label :name %>
+          <%= p.text_field :name, list: "people_autocomplete" %><br><br>
+          <datalist id="people_autocomplete">
+            <%= @people.each do |person|%>
+            <option value="<%=person.name%>">
+          <%end%>
+        <%end%>
+  </div>
+  <div>
+        <%= f.fields_for :employer do |employer| %>
+          Employer <%= employer.label :name %>
+          <%= employer.text_field :name, list: "employers_autocomplete" %><br><br>
+          <datalist id="employers_autocomplete">
+          <%= @employers.each do |employer|%>
+            <option value="<%=employer.name%>">
+          <%end%>
+        <%end%>
+  </div>
+  <div>
+        <%= f.fields_for :city do |city| %>
+          City <%= city.label :name %>
+          <%= city.text_field :name, list: "cities_autocomplete" %><br><br>
+          <datalist id="cities_autocomplete">
+          <%= @cities.each do |city|%>
+            <option value="<%=city.name%>">
+          <%end%>
+        <%end%>
+  </div>
+  <div>
+  Position <%= f.label :title %>
+  <%= f.text_field :title %><br><br>
+  </div>
+  <div>
+  Position <%= f.label :start_date %>
+  <%= f.text_field :start_date %><br><br>
+  </div>
+  <div>
+  Position <%= f.label :finish_date %>
+  <%= f.text_field :finish_date %><br><br>
+  </div>
+  <div>
+  <%= f.submit %>
+  </div>
+<%end%>

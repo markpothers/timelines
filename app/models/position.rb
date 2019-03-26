@@ -7,7 +7,6 @@ class Position < ApplicationRecord
   accepts_nested_attributes_for :employer
   accepts_nested_attributes_for :city
 
-
   # def person=(name)
   #   self.person_id = Person.find_or_create_by(name).id
   # end

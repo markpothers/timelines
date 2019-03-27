@@ -5,7 +5,6 @@
     </li>
 </ul>
 
-<h3>Residents</h3>
 <h4>This city has been host to these people as residents:</h4>
 <ul>
   <% @city.positions.each do |position|%>
@@ -15,7 +14,6 @@
   <%end%>
 </ul>
 
-<h3>Co-residents</h3>
 <h4>These residents lived in <%=@city.name%> at the same time:</h4>
 <table>
     <tr>
@@ -24,7 +22,7 @@
   <tbody>
     <% @city.co_residents.each do |co_resident_pair|%>
     <tr>
-      <td><%= co_resident_pair[0].person.name%></td><td><%=co_resident_pair[1].person.name%></td><td><%=co_resident_pair[2].strftime('%b %Y')%></td><td><%=co_resident_pair[3].strftime('%b %Y')%></td>
+      <td class="left"><%= co_resident_pair[0].person.name%></td><td><%=co_resident_pair[1].person.name%></td><td><%=co_resident_pair[2].strftime('%b %Y')%></td><td><%=co_resident_pair[3].strftime('%b %Y')%></td>
     </tr>
     <%end%>
   </tbody>

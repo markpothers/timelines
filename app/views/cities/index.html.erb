@@ -7,7 +7,7 @@
   <tbody>
     <% @cities.each do |city|%>
     <tr>
-      <td><%= link_to city.name, city_path(city)%></td><td><%=city.region%></td><td><%=city.country%></td><td><%= city.yandm(city.average_residency)%></td>
+      <td class="left"><%= link_to city.name, city_path(city)%></td><td><%=city.region%></td><td><%=city.country%></td><td><%= city.yandm(city.average_residency)%></td>
     </tr>
     <%end%>
   </tbody>

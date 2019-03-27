@@ -22,7 +22,7 @@ class Employer < ApplicationRecord
               else
                 first_finish = position.finish_date
               end
-            coworkers << [my_position, position, my_position.city_id, position.city_id, last_start, first_finish]
+            coworkers << [my_position, position, last_start, first_finish]
           end
         end
         coworkers.each do |coworker|

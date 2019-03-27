@@ -1,5 +1,5 @@
 <h1><%=@employer.name%></h1>
-
+<h4>About the company:</h4>
   <ul>
     <li>
       <%= @employer.industry%>
@@ -19,30 +19,34 @@
   <ul>
     <%@employer.cities.each do |city|%>
     <li>
-      <%= city.name %>
+      <%= link_to city.name, city_path(city) %>
     </li>
     <%end%>
   </ul>
 
 <h4>These people have worked at <%=@employer.name %>:</h4>
   <ul>
-    <%@employer.positions.each do |position|%>
+    <%@employer.sorted_positions.each do |position|%>
     <li>
-      <%= position.person.name %> from <%= position.start_date.year %> until <%= position.finish_date.year%>.
+      <%= link_to position.person.name, person_path(position.person) %> from <%= position.start_date.year %> until <%= position.finish_date.year%>.
     </li>
     <%end%>
   </ul>
 
 <h4>These people have worked at <%=@employer.name %> at the same time:</h4>
-  <ul>
-    <%@employer.positions.each do |position|%>
-    <li>
-      <%= position.person.name %> from <%= position.start_date.year %> until <%= position.finish_date.year%>.
-    </li>
+<table>
+    <tr>
+      <th>Employee 1</th><th>Employee 2</th><th>Employee 1 office</th><th>Employee 2 office</th><th>Overlap start date</th><th>Overlap finish date</th>
+    </tr>
+  <tbody>
+    <%@employer.coworkers.each do |coworker|%>
+    <tr>
+      <td><%= coworker[0].person.name %></td><td><%=coworker[1].person.name%></td><td>CITY PLACEHOLDER</td><td>CITY PLACEHOLDER</td><td><%=coworker[4].strftime('%b %Y')%></td><td><%=coworker[5].strftime('%b %Y')%></td>
+    </tr>
     <%end%>
-  </ul>
-
-
+  </tbody>
+</table>
+<br><br>
 
 <%=form_tag("/employers/#{@employer.id}/edit", method: "get") do |f| %>
 <%=submit_tag "Edit"%>

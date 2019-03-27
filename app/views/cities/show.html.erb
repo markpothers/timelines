@@ -10,7 +10,7 @@
 <ul>
   <% @city.positions.each do |position|%>
     <li>
-      <%= position.person.name %> worked here as <%= position.title %> from <%= position.start_date.strftime('%b %Y') %> until <%= position.finish_date.strftime('%b %Y') %>
+      <%= position.person.name %> worked here as '<%= position.title %>' from <%= position.start_date.strftime('%b %Y') %> until <%= position.finish_date.strftime('%b %Y') %>
     </li>
   <%end%>
 </ul>

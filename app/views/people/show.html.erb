@@ -2,31 +2,39 @@
 
   <ul>
     <li>
-      Date of Birth: <%= @person.birthday.strftime('%B %d, %Y')%>
+      Date of Birth: <%= @person.birthday%>
     </li>
   </ul>
 
   <h3>Personal Timeline:</h3>
-  <ul>
-    <% @person.positions.each do |p| %>
-      <li>
-        <%= p.title %> at <%= p.employer.name %>
-      </li>
-        <ul>
-          <li>
-            <%= p.city.name %>, <%= p.city.country %>
-          </li>
-          <li>
-            <%= p.start_date.strftime('%B %Y') %> - <%= p.finish_date.strftime('%B %Y') %>
-          </li>
-          <br>
-        </ul>
-      <%end%>
-  </ul>
+ <table>
+    <tr>
+      <th>Position</th><th>Employer</th><th>City</th><th>Arrival Date</th><th>Departure Date</th>
+    </tr>
+  <tbody>
+    <% @person.sorted_positions.each do |p| %>
+    <tr>
+      <td><%=p.title%></td><td><%=p.employer.name%></td><td>CITY PLACEHOLDER</td><td><%= p.start_date.strftime('%B %Y') %></td><td><%= p.finish_date.strftime('%B %Y') %></td>
+    </tr>
+    <%end%>
+  </tbody>
+</table>
 
-
-
-
+<h3>Parallel lives:</h3>
+<h4>These people have lived in the same cities as <%=@person.name%> at the same times:</h4>
+ <table>
+    <tr>
+      <th>Counterpart</th><th>City</th><th>Overlap beginning</th><th>Overlap end</th>
+    </tr>
+  <tbody>
+    <% @person.parallel_positions.each do |pp| %>
+    <tr>
+      <td><%=pp[0].person.name%></td><td>CITY PLACEHOLDER</td><td><%= pp[1].strftime('%B %Y') %></td><td><%= pp[2].strftime('%B %Y') %></td>
+    </tr>
+    <%end%>
+  </tbody>
+</table>
+<br><br>
 
 
 

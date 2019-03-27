@@ -51,24 +51,4 @@ class City < ApplicationRecord
     coincidences
     end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 end

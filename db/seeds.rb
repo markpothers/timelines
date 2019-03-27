@@ -49,7 +49,7 @@ end
 1000.times do
     start_date = Faker::Date.between(20.years.ago, Date.today)
     Event.create({
-        title: Faker::Hipster.sentence(3),
+        title: Faker::Hipster.words(3).join(" "),
         description: Faker::Hipster.sentence,
         start_date: start_date,
         finish_date: Faker::Date.between(start_date, start_date+30),

@@ -21,12 +21,20 @@ They stayed for an average length of <%=@city.yandm(@city.average_residency)%></
 <ul>
   <% @city.positions.each do |position|%>
     <li>
-      <%= position.person.name %> worked here as <%= position.title %> from <%= position.start_date.year %> until <%= position.finish_date.year %> 
+      <%= position.person.name %> worked here as <%= position.title %> from <%= position.start_date.year %> until <%= position.finish_date.year %>
     </li>
   <%end%>
 </ul>
 
-
+<h3>Co-residents</h3>
+<h4>At one time or another, these people were in <%=@city.name%> at the same time:</h4>
+<ul>
+  <% @city.co_residents.each do |co_resident_pair|%>
+    <li>
+      <%= co_resident_pair[0].person.name %> and <%= co_resident_pair[1].person.name %>
+    </li>
+  <%end%>
+</ul>
 
 
 <%=form_tag("/cities/#{@city.id}/edit", method: "get") do |f| %>

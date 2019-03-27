@@ -15,6 +15,35 @@
     </li>
   </ul>
 
+<h4><%=@employer.name %> has an office in:</h4>
+  <ul>
+    <%@employer.cities.each do |city|%>
+    <li>
+      <%= city.name %>
+    </li>
+    <%end%>
+  </ul>
+
+<h4>These people have worked at <%=@employer.name %>:</h4>
+  <ul>
+    <%@employer.positions.each do |position|%>
+    <li>
+      <%= position.person.name %> from <%= position.start_date.year %> until <%= position.finish_date.year%>.
+    </li>
+    <%end%>
+  </ul>
+
+<h4>These people have worked at <%=@employer.name %> at the same time:</h4>
+  <ul>
+    <%@employer.positions.each do |position|%>
+    <li>
+      <%= position.person.name %> from <%= position.start_date.year %> until <%= position.finish_date.year%>.
+    </li>
+    <%end%>
+  </ul>
+
+
+
 <%=form_tag("/employers/#{@employer.id}/edit", method: "get") do |f| %>
 <%=submit_tag "Edit"%>
 <%end%>

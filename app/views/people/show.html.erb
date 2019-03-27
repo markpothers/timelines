@@ -2,7 +2,7 @@
 
   <ul>
     <li>
-      <%= @person.birthday%>
+      Date of Birth: <%= @person.birthday.strftime('%B %d, %Y')%>
     </li>
   </ul>
 
@@ -10,8 +10,17 @@
   <ul>
     <% @person.positions.each do |p| %>
       <li>
-        <%= p.title %>: from <%= p.start_date.year %>, until <%= p.finish_date.year %>, in <%= p.city.name %>
+        <%= p.title %> at <%= p.employer.name %>
       </li>
+        <ul>
+          <li>
+            <%= p.city.name %>, <%= p.city.country %>
+          </li>
+          <li>
+            <%= p.start_date.strftime('%B %Y') %> - <%= p.finish_date.strftime('%B %Y') %>
+          </li>
+          <br>
+        </ul>
       <%end%>
   </ul>
 

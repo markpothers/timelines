@@ -7,8 +7,9 @@
       </li>
         <ul>
           <li>
-            <%= person.birthday%>
+            <%= person.birthday.strftime('%b %d, %Y')%>
           </li>
+          <br>
         </ul>
     <%end%>
   </ul>

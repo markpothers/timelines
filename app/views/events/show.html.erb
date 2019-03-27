@@ -11,10 +11,10 @@
     <%= @event.description%>
     </li>
     <li>
-      <%= @event.start_date%>
+      <%= @event.start_date.strftime('%B %d, %Y')%>
     </li>
     <li>
-      <%= @event.finish_date%>
+      <%= @event.finish_date.strftime('%B %d, %Y')%>
     </li>
   </ul>
 

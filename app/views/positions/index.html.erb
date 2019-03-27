@@ -16,8 +16,8 @@
             <%= position.description%>
           </li>
           <li>
-            From: <%= position.start_date%>, until: <%=position.finish_date%>
-          </li>
+            From: <%= position.start_date.strftime('%b %Y')%>, until: <%=position.finish_date.strftime('%b %Y')%>
+          </li><br>
         </ul>
     <%end%>
   </ul>

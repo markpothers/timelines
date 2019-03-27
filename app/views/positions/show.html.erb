@@ -2,22 +2,18 @@
 
   <ul>
     <li>
-      <%= link_to @position.person.name, person_path(@position.person)%>
+      Position Held By: <%= link_to @position.person.name, person_path(@position.person)%>
     </li>
     <li>
-      <%= link_to @position.city.name, city_path(@position.city)%>
+      Location: <%= link_to @position.city.name, city_path(@position.city)%>
     </li>
     <li>
-      <%= link_to @position.employer.name, employer_path(@position.employer)%>
+      Employer: <%= link_to @position.employer.name, employer_path(@position.employer)%>
+    <li>
+      Description: <%= @position.description%>
     </li>
     <li>
-    <%= @position.description%>
-    </li>
-    <li>
-      <%= @position.start_date%>
-    </li>
-    <li>
-      <%= @position.finish_date%>
+      From: <%= @position.start_date.strftime('%b %Y')%>, Until: <%= @position.finish_date.strftime('%b %Y')%>
     </li>
     <li>
       <%= @position.duration %>

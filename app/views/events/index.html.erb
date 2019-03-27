@@ -16,7 +16,7 @@
             <%= link_to event.destination.name, city_path(event.destination)%>
           </li>
           <li>
-            From: <%= event.start_date%>, until: <%=event.finish_date%>
+            From: <%= event.start_date.strftime('%B %d, %Y')%>, until: <%=event.finish_date.strftime('%B %d, %Y')%>
           </li>
         </ul>
     <%end%>

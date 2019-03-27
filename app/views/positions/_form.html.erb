@@ -41,11 +41,11 @@
   </div>
   <div>
   Position <%= f.label :start_date %>
-  <%= f.date_select :start_date %><br><br>
+  <%= f.date_select :start_date, :start_year => 1940, :end_year => Date.today.year+2 %><br><br>
   </div>
   <div>
   Position <%= f.label :finish_date %>
-  <%= f.date_select :finish_date %><br><br>
+  <%= f.date_select :finish_date, :start_year => 1940 %><br><br>
   </div>
   <div>
   <%= f.submit %>

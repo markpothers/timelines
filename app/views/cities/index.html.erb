@@ -2,12 +2,12 @@
 
 <table>
     <tr>
-      <th>City</th><th>Average residence length</th>
+      <th>City</th><th>Region</th><th>Country</th><th>Average residence length</th>
     </tr>
   <tbody>
     <% @cities.each do |city|%>
     <tr>
-      <td><%= link_to city.name, city_path(city)%>, <%=city.region%>, <%=city.country%></td><td><%= city.yandm(city.average_residency)%></td>
+      <td><%= link_to city.name, city_path(city)%></td><td><%=city.region%></td><td><%=city.country%></td><td><%= city.yandm(city.average_residency)%></td>
     </tr>
     <%end%>
   </tbody>

@@ -26,13 +26,30 @@ class City < ApplicationRecord
           position != other_position
         end
           all_other_positions.each do |remaining_position|
-            if remaining_position.start_date <= position.finish_date || remaining_position.finish_date >= position.start_date
-              coincidences << [position, remaining_position]
+            if remaining_position.start_date <= position.finish_date && remaining_position.finish_date >= position.start_date
+                if remaining_position.start_date >= position.start_date
+                  last_start = remaining_position.start_date
+                else
+                  last_start = position.start_date
+                end
+                if remaining_position.finish_date <= position.finish_date
+                    first_finish = remaining_position.finish_date
+                else
+                  first_finish = position.finish_date
+                end
+              coincidences << [position, remaining_position, last_start, first_finish]
             end
           end
       end
+      coincidences.each do |coincidence|
+        coincidences.each do |other_coincidence|
+          if coincidence[0] == other_coincidence[1] && coincidence[1] == other_coincidence[0]
+            coincidences.delete(other_coincidence)
+          end
+        end
+      end
     coincidences
-  end
+    end
 
 
 

@@ -15,4 +15,9 @@ class Position < ApplicationRecord
     self.city_id = City.find_or_create_by(name: name).id
   end
 
+  def duration
+    seconds = self.finish_date - self.start_date
+    self.yandm(seconds)
+  end
+
 end

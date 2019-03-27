@@ -24,10 +24,7 @@
 
 
 
-
-
-
-<%=form_tag("/people/#{@person.id}/delete", method: "get") do |f| %>
+<%=form_tag("/people/#{@person.id}/edit", method: "get") do |f| %>
   <%=submit_tag "Edit"%>
 <%end%>
 <%=form_tag("/people/#{@person.id}", method: "delete") do |f| %>

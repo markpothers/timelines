@@ -5,6 +5,30 @@
     </li>
 </ul>
 
+<h3>Residents:</h3>
+<h4>At one time or another, this city has had these people as residents.<br>
+They stayed for an average length of <%=@city.yandm(@city.average_residency)%></h4>
+<ul>
+  <% @city.people.each do |person|%>
+    <li>
+      <%= person.name%>
+    </li>
+  <%end%>
+</ul>
+
+<h3>Positions</h3>
+<h4>At one time or another, this city has been host to these positions:</h4>
+<ul>
+  <% @city.positions.each do |position|%>
+    <li>
+      <%= position.person.name %> worked here as <%= position.title %> from <%= position.start_date.year %> until <%= position.finish_date.year %> 
+    </li>
+  <%end%>
+</ul>
+
+
+
+
 <%=form_tag("/cities/#{@city.id}/edit", method: "get") do |f| %>
 <%=submit_tag "Edit"%>
 <%end%>

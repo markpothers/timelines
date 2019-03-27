@@ -22,7 +22,7 @@ class Person < ApplicationRecord
               last_start = position.start_date
             end
             if my_position.finish_date <= position.finish_date
-                first_finish = my_position.finish_date
+              first_finish = my_position.finish_date
             else
               first_finish = position.finish_date
             end

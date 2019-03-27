@@ -33,20 +33,20 @@
     <%end%>
   </ul>
 
-<h4>These people have worked at <%=@employer.name %> at the same time:</h4>
-<table>
-    <tr>
-      <th>Employee 1</th><th>Employee 2</th><th>Employee 1 office</th><th>Employee 2 office</th><th>Overlap start date</th><th>Overlap finish date</th>
-    </tr>
-  <tbody>
-    <%@employer.coworkers.each do |coworker|%>
-    <tr>
-      <td><%= coworker[0].person.name %></td><td><%=coworker[1].person.name%></td><td>CITY PLACEHOLDER</td><td>CITY PLACEHOLDER</td><td><%=coworker[4].strftime('%b %Y')%></td><td><%=coworker[5].strftime('%b %Y')%></td>
-    </tr>
-    <%end%>
-  </tbody>
-</table>
-<br><br>
+    <h4>These people have worked at <%=@employer.name %> at the same time:</h4>
+      <table>
+          <tr>
+            <th>Employee 1</th><th>Employee 2</th><th>Overlap start date</th><th>Overlap finish date</th>
+          </tr>
+        <tbody>
+          <%@employer.coworkers.each do |coworker|%>
+          <tr>
+            <td class="left"><%= coworker[0].person.name %></td><td><%=coworker[1].person.name%></td><td><%=coworker[2].strftime('%b %Y')%></td><td><%=coworker[3].strftime('%b %Y')%></td>
+          </tr>
+          <%end%>
+        </tbody>
+      </table>
+    <br><br>
 
 <%=form_tag("/employers/#{@employer.id}/edit", method: "get") do |f| %>
 <%=submit_tag "Edit"%>

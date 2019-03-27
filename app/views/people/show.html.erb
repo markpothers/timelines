@@ -15,14 +15,14 @@
   <tbody>
     <% @person.sorted_positions.each do |p| %>
     <tr>
-      <td><%=p.title%></td><td><%=p.employer.name%></td><td><%=p.city.name%></td><td><%= p.start_date.strftime('%B %Y') %></td><td><%= p.finish_date.strftime('%B %Y') %></td>
+      <td class="left"><%=p.title%></td><td><%=p.employer.name%></td><td><%=p.city.name%></td><td><%= p.start_date.strftime('%B %Y') %></td><td><%= p.finish_date.strftime('%B %Y') %></td>
     </tr>
     <%end%>
   </tbody>
 </table>
 
 <h3>Parallel lives:</h3>
-<h4>These people have lived in the same cities as <%=@person.name%> at the same times:</h4>
+<ul><li>These people have lived in the same cities as <%=@person.name%> at the same times:</li></ul>
  <table>
     <tr>
       <th>Counterpart</th><th>City</th><th>Overlap beginning</th><th>Overlap end</th>
@@ -30,17 +30,12 @@
   <tbody>
     <% @person.parallel_positions.each do |pp| %>
     <tr>
-      <td><%=pp[0].person.name%></td><td><%=pp[0].city.name%></td><td><%= pp[1].strftime('%B %Y') %></td><td><%= pp[2].strftime('%B %Y') %></td>
+      <td class="left"><%=pp[0].person.name%></td><td><%=pp[0].city.name%></td><td><%= pp[1].strftime('%B %Y') %></td><td><%= pp[2].strftime('%B %Y') %></td>
     </tr>
     <%end%>
   </tbody>
 </table>
 <br><br>
-
-
-
-
-
 
 <%=form_tag("/people/#{@person.id}/edit", method: "get") do |f| %>
   <%=submit_tag "Edit"%>

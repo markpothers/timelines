@@ -1,5 +1,8 @@
 class CitiesController < ApplicationController
 
+  def home
+  end
+
   def index
     @cities = City.all.sort_by{ |city| city.people.length }.reverse
   end

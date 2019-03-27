@@ -8,6 +8,10 @@
   <%= f.date_select :birthday, :start_year=>1920, :end_year=>Date.today.year %><br><br>
   </div>
   <div>
+  <%= f.label :avatar_url, "Copy and paste an image URL to save it as your Avatar!"%>
+  <%= f.text_field :avatar_url %><br><br>
+  </div>
+  <div>
   <%= f.submit %>
   </div>
 <%end%>

@@ -30,11 +30,11 @@
 
   <div>
   Event <%= f.label :start_date %>
-  <%= f.date_select :start_date %><br><br>
+  <%= f.date_select :start_date, :start_year => 1940 %><br><br>
   </div>
   <div>
   Event <%= f.label :finish_date %>
-  <%= f.date_select :finish_date %><br><br>
+  <%= f.date_select :finish_date, :start_year => 1940 %><br><br>
   </div>
   <div>
   <%= f.submit %>

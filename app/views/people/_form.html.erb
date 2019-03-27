@@ -5,7 +5,7 @@
   </div>
   <div>
   <%= f.label :birthday %>
-  <%= f.date_select :birthday %><br><br>
+  <%= f.date_select :birthday, :start_year=>1920, :end_year=>Date.today.year %><br><br>
   </div>
   <div>
   <%= f.submit %>

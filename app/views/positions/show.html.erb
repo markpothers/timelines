@@ -2,7 +2,7 @@
 
   <ul>
     <li>
-      <%= link_to @position.person.name, person_path(@position.person)%>
+      Position Held By: <%= link_to @position.person.name, person_path(@position.person)%>
     </li>
     <li>
       Location: <%= link_to @position.city.name, city_path(@position.city)%>

@@ -1,14 +1,20 @@
-
 require 'faker'
+require 'random_user_generator'
 City.destroy_all
 Person.destroy_all
 Employer.destroy_all
 Position.destroy_all
 
+people = []
 500.times do 
+    people << RandomUserGenerator.generate
+end
+
+people.each do |user| 
     Person.create({
-        name: Faker::Name.name,
-        birthday: Faker::Date.birthday(17, 65)
+        name: "#{user.name.first.titleize} #{user.name.last.titleize}",
+        birthday: user.dob.date,
+        avatar_url: user.picture.large
     })
 end
 

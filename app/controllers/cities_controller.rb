@@ -1,7 +1,7 @@
 class CitiesController < ApplicationController
 
   def index
-    @cities = City.all.sort_by{ |city| city.average_residency }.reverse
+    @cities = City.all.sort_by{ |city| city.people.length }.reverse
   end
 
   def show

@@ -1,7 +1,7 @@
 class EmployersController < ApplicationController
 
   def index
-    @employers = Employer.all
+    @employers = Employer.all.sort_by{ |employer| employer.people.length }.reverse
   end
 
   def show

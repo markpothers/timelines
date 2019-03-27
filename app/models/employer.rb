@@ -4,7 +4,7 @@ class Employer < ApplicationRecord
   has_many :cities, through: :positions
 
   def sorted_positions
-    self.positions.sort_by{|position|position.start_date}
+    self.positions.uniq.sort_by{|position|position.start_date}
   end
 
   def coworkers

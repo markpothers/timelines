@@ -17,7 +17,7 @@
 
 <h4><%=@employer.name %> has an office in:</h4>
   <ul>
-    <%@employer.cities.each do |city|%>
+    <%@employer.cities.uniq.each do |city|%>
     <li>
       <%= link_to city.name, city_path(city) %>
     </li>

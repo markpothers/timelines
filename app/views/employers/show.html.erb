@@ -1,18 +1,23 @@
+<div>
 <h1><%=@employer.name%></h1>
 <h4>About the company:</h4>
   <ul>
     <li>
-      <%= @employer.industry%>
+      Industry: <%= @employer.industry%>
     </li>
     <li>
-      <%= @employer.size%>
+      Company size: <%= @employer.size%>
     </li>
     <li>
-      <%= @employer.products%>
+      Products & services: <%= @employer.products%>
+    </li>
+    <li>
+      <%= link_to 'Company website', @employer.website_url, target: "_blank" %>
     </li>
     <li>
       <%= @employer.description%>
     </li>
+
   </ul>
 
 <h4><%=@employer.name %> has an office in:</h4>
@@ -54,3 +59,4 @@
 <%=form_tag("/employers/#{@employer.id}", method: "delete") do |f| %>
   <%=submit_tag "Delete"%>
 <%end%>
+</div>

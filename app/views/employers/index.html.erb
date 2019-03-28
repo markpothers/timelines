@@ -1,5 +1,18 @@
 <h1>Employers list:</h1>
 
+<table>
+    <tr>
+      <th>Employer</th><th>Industry</th><th>Company size</th>
+    </tr>
+  <tbody>
+    <% @employers.each do |employer|%>
+    <tr>
+      <td class="left"><%= link_to employer.name, employer_path(employer)%></td><td><%=employer.industry%></td><td><%=employer.size%></td>
+    </tr>
+    <%end%>
+  </tbody>
+</table>
+
   <ul>
     <% @employers.each do |employer|%>
       <li>
@@ -14,9 +27,6 @@
           </li>
           <li>
             <%= employer.products%>
-          </li>
-          <li>
-            <%= employer.description%>
           </li>
         </ul>
         <br>

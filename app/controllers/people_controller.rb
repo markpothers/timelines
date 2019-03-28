@@ -1,7 +1,7 @@
 class PeopleController < ApplicationController
 
   def index
-    @people = Person.all
+    @people = Person.all.sort_by{ |person| person.name }
   end
 
   def show
@@ -17,7 +17,7 @@ class PeopleController < ApplicationController
       if @person.save
         redirect_to person_path(@person)
       else
-        redirect_to new_person_path
+        render :new
       end
   end
 

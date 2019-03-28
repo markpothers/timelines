@@ -6,13 +6,18 @@
 </ul>
 
 <h4>This city has been host to these people as residents:</h4>
-<ul>
+<table>
+    <tr>
+      <th>Name</th><th>Position held</th><th>Employer</th><th>From</th><th>Until</th>
+    </tr>
+  <tbody>
   <% @city.positions.each do |position|%>
-    <li>
-      <%= position.person.name %> worked here as '<%= position.title %>' from <%= position.start_date.strftime('%b %Y') %> until <%= position.finish_date.strftime('%b %Y') %>
-    </li>
-  <%end%>
-</ul>
+    <tr>
+      <td class="left"><%= link_to position.person.name, person_path(position.person) %></td><td><%= position.title %></td><td><%= position.employer.name %></td><td><%= position.start_date.strftime('%b %Y') %></td><td><%=position.finish_date.strftime('%b %Y')%></td>
+    </tr>
+    <%end%>
+  </tbody>
+</table>
 
 <h4>These residents lived in <%=@city.name%> at the same time:</h4>
 <table>

@@ -1,15 +1,14 @@
 <h1>People list:</h1>
 
-  <ul>
+<table>
+    <tr>
+      <th>Name</th><th>Birthday</th>
+    </tr>
+  <tbody>
     <% @people.each do |person|%>
-      <li>
-        <strong><%= link_to person.name, person_path(person)%></strong>
-      </li>
-        <ul>
-          <li>
-            <%= person.birthday.strftime('%B %d, %Y')%>
-          </li>
-          <br>
-        </ul>
+    <tr>
+      <td class="left"><%= link_to person.name, person_path(person) %></td><td class="left"><%=person.birthday.strftime('%B %d, %Y')%></td>
+    </tr>
     <%end%>
-  </ul>
+  </tbody>
+</table>

@@ -1,23 +1,15 @@
 <h1>Events list:</h1>
 
-  <ul>
+
+<table>
+    <tr>
+      <th>Visitor</th><th>Title</th><th>City</th><th>During</th>
+    </tr>
+  <tbody>
     <% @events.each do |event|%>
-      <li>
-        <strong><%= link_to event.title, event_path(event)%></strong>
-      </li>
-        <ul>
-          <li>
-            <%= link_to event.visitor.name, person_path(event.visitor)%>
-          </li>
-          <li>
-            <%= event.description%>
-          </li>
-          <li>
-            <%= link_to event.destination.name, city_path(event.destination)%>
-          </li>
-          <li>
-            From: <%= event.start_date.strftime('%B %d, %Y')%>, until: <%=event.finish_date.strftime('%B %d, %Y')%>
-          </li>
-        </ul>
+    <tr>
+      <td class="left"><%= link_to event.visitor.name, person_path(event.visitor)%></td><td class="left"><%=link_to event.title, event_path(event)%></td><td><%= link_to event.destination.name, city_path(event.destination) %></td><td><%=event.start_date.strftime('%B, %Y')%></td>
+    </tr>
     <%end%>
-  </ul>
+  </tbody>
+</table>

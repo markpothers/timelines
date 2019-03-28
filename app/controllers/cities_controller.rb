@@ -20,7 +20,7 @@ class CitiesController < ApplicationController
       if @city.save
         redirect_to city_path(@city)
       else
-        redirect_to new_city_path
+        render :new
       end
   end
 

@@ -26,9 +26,9 @@
  a {text-align: left; font-family: Arial, Helvetica, sans-serif;}
  td {text-align: center; text-indent: 20pt;}
  li {font-family: Arial, Helvetica, sans-serif;}
- img {border: 100pt; display: inline;position}
+ img {border: 100pt; display: inline;}
  body {background-color: white;}
- 
- div {}
- .h1pic {width: 850px}
+ div {width: 950px}
+ .h1pic {width: 800px}
 .face {position: absolute; right: 700px; top: 50px}
+#home {width:950px; height:950px; background-image: url("insert image link here")}

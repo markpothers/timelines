@@ -10,9 +10,9 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
+ *= require custom.scss
  */
+<<<<<<< HEAD
  form {display: inline;font-family: Arial, Helvetica, sans-serif;text-indent: 20pt;}
  input {font-family: Arial, Helvetica, sans-serif;}
  select {}
@@ -32,3 +32,91 @@
  .h1pic {width: 800px}
 .face {position: absolute; right: 700px; top: 50px}
 #home {width:950px; height:950px; background-image: url("insert image link here")}
+=======
+/* form {
+  display: inline;
+  font-family: Arial, Helvetica, sans-serif;
+  text-indent: 20pt;
+}
+input {
+  font-family: Arial, Helvetica, sans-serif;
+}
+select {
+}
+h1 {
+  text-indent: 20pt;
+  font-family: Arial, Helvetica, sans-serif;
+}
+h3 {
+  text-indent: 20pt;
+  font-family: Arial, Helvetica, sans-serif;
+}
+h4 {
+  font-family: Arial, Helvetica, sans-serif;
+  text-indent: 20pt;
+}
+h5 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+p {
+  font-family: Arial, Helvetica, sans-serif;
+}
+th {
+  font-family: Arial, Helvetica, sans-serif;
+  text-indent: 20pt;
+}
+.left {
+  text-align: left;
+}
+a {
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+li {
+  font-family: Arial, Helvetica, sans-serif;
+}
+img {
+  border: 100pt;
+  display: inline;
+}
+body {
+  background-color: white;
+}
+
+div {
+}
+.h1pic {
+  width: 850px;
+}
+.face {
+  position: absolute;
+  right: 700px;
+  top: 50px;
+} */
+
+h1.c {
+  text-align: center;
+}
+
+th {
+  text-align: center;
+}
+
+th.wrap {
+  width: 35%;
+}
+
+td {
+  text-align: center;
+}
+
+td.l {
+  text-align: left;
+  word-wrap: normal;
+}
+
+tr.double {
+  height: 8ch;
+}
+>>>>>>> bootstrap

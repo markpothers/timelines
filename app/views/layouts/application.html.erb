@@ -15,6 +15,7 @@
   </head>
 
   <body>
+<<<<<<< HEAD
   <div>
       <%=form_tag("/", method: "get") do |f| %>
         <%=submit_tag "Home"%>
@@ -50,8 +51,44 @@
             <%=form_tag("/events/new", method: "get") do |f| %>
         <%=submit_tag "New Event"%>
       <%end%>
+=======
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">Timelines</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler02" aria-controls="navbarToggler02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarToggler02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" href=<%=cities_path%>>Cities Index</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href=<%=people_path%>>People Index</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href=<%=employers_path%>>Employers Index</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href=<%=events_path%>>Events Index</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href=<%=positions_path%>>Positions Index</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search Indexes">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+>>>>>>> bootstrap
       <hr>
-    </div>
+
 <%= yield %>
   </body>
 </html>
+
+

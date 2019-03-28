@@ -1,13 +1,17 @@
-<h1><%=@person.name%></h1>
-<%= image_tag @person.avatar_url, height: "200" %>
+<div class="h1pic">
+  <h1><%=@person.name%></h1>
+  <%= image_tag @person.avatar_url, height: "200", class: "face"%>
+</div>
 
-  <ul>
+   <ul>
     <li>
       Date of Birth: <%= @person.birthday.strftime('%B %d, %Y')%>
     </li>
   </ul>
 
-  <h3>Personal Timeline:</h3>
+<br><br><br>
+
+<h3>Personal Timeline:</h3>
  <table>
     <tr>
       <th>Position</th><th>Employer</th><th>City</th><th>Arrival Date</th><th>Departure Date</th>

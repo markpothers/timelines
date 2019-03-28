@@ -15,11 +15,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    byebug
-    @event = event.new
-    @event.start_date = get_start_date
-    @event.finish_date = get_finish_date
-    @event.update_attributes(event_params)
+    @event = Event.new(event_params)
     if @event.save
       redirect_to event_path(@event)
     else
@@ -37,10 +33,10 @@ end
   def update
     @event = Event.find(params[:id])
     @event.update_attributes(event_params)
-    if event.save
+    if @event.save
       redirect_to event_path(@event)
     else
-      redirect_to edit event_path(@event)
+      render :edit
     end
   end
 
@@ -53,17 +49,7 @@ end
   private
 
   def event_params
-    params.require(:event).permit(:visitor, :title, :description, :destination,"start_date(1i)","start_date(2i)","start_date(3i)","finish_date(1i)","finish_date(2i)","finish_date(3i)")
-  end
-
-  def get_start_date
-    p_info = position_params
-    start = Date.new(p_info["start_date(1i)"].to_i,p_info["start_date(2i)"].to_i,p_info["start_date(3i)"].to_i)
-  end
-
-  def get_finish_date
-    p_info = position_params
-    return Date.new(p_info["finish_date(1i)"].to_i,p_info["finish_date(2i)"].to_i,p_info["finish_date(3i)"].to_i)
+    params.require(:event).permit(:destination, :visitor, :title, :description, "start_date(1i)", "start_date(2i)", "start_date(3i)", "finish_date(1i)", "finish_date(2i)", "finish_date(3i)")
   end
 
 end

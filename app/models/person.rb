@@ -11,9 +11,9 @@ class Person < ApplicationRecord
   end
 
   def parallel_positions
-    coincident_positions = []
-    other_positions = Position.all.sort_by{|position| position.start_date }-self.sorted_positions
+    coincident_locations = []
     self.sorted_positions.each do |my_position|
+      other_positions = Position.where("city_id = #{my_position.city.id}")-self.sorted_positions
       other_positions.each do |position|
         if my_position.city == position.city && my_position.start_date <= position.finish_date && my_position.finish_date >= position.start_date
             if my_position.start_date >= position.start_date
@@ -26,11 +26,22 @@ class Person < ApplicationRecord
             else
               first_finish = position.finish_date
             end
-          coincident_positions << [position, last_start, first_finish]
+          coincident_locations << [position, last_start, first_finish]
         end
       end
     end
-    coincident_positions
+    coincident_locations
+  end
+
+  def timeline
+    timeline = []
+      self.positions.each do |p|
+        timeline << ["Position", p.title, p.city.name, p.start_date, p.finish_date]
+      end
+      self.events_as_visitor.each do |e|
+         timeline << ["Event", e.title, e.destination.name, e.start_date, e.finish_date]
+      end
+    timeline.sort_by{|item| item[3]}
   end
 
 end

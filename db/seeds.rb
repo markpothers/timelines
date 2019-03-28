@@ -46,18 +46,7 @@ CSV.foreach("./lib/b_corp_impact_data_modified.csv", :encoding => 'windows-1251:
                 start_date: start_date,
                 finish_date: Faker::Date.between(start_date, 1.year.from_now)
             )            
-            start_date_2 = Faker::Date.between(20.years.ago, Date.today)
-            new_position_2 = Position.new(
-                employer_id: new_company.id,
-                city_id: new_city.id,
-                person_id: Person.all.sample.id,
-                title: Faker::Job.title,
-                description: Faker::Job.key_skill,
-                start_date: start_date_2,
-                finish_date: Faker::Date.between(start_date_2, 1.year.from_now)
-            )
             new_position.save
-            new_position_2.save
         end
     end
     stored_name = row[0] 
@@ -75,17 +64,15 @@ end
     })
 end
 
-Person.all.each do |person|
-    if person.positions == nil
-            start_date = Faker::Date.between(20.years.ago, Date.today)
-            new_position = Position.create(
-                employer_id: Employer.all.sample.id,
-                city_id: City.all.sample.id,
-                person_id: person.id,
-                title: Faker::Job.title,
-                description: Faker::Job.key_skill,
-                start_date: start_date,
-                finish_date: Faker::Date.between(start_date, 1.year.from_now)
-            )
-    end
+Person.all.each do |p|
+    start_date = Faker::Date.between(20.years.ago, Date.today)
+    Position.create(
+        employer_id: Employer.all.sample.id,
+        city_id: City.all.sample.id,
+        person_id: p.id,
+        title: Faker::Job.title,
+        description: Faker::Job.key_skill,
+        start_date: start_date,
+        finish_date: Faker::Date.between(start_date, 1.year.from_now)
+    )
 end        

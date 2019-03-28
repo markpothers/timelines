@@ -17,9 +17,12 @@ class PositionsController < ApplicationController
 
   def create
       @position = Position.new
+      @position.update_attributes(position_params)
       @position.start_date = get_start_date
       @position.finish_date = get_finish_date
-      @position.update_attributes(position_params)
+      @position.city = position_params[:city]
+      @position.employer = position_params[:employer]
+      @position.person = position_params[:person]
       if @position.save
         redirect_to position_path(@position)
       else

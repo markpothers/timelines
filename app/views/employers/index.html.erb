@@ -1,24 +1,23 @@
-<h1>Employers list:</h1>
+<h1 class="c">Employers Index</h1>
+<hr>
 
-  <ul>
-    <% @employers.each do |employer|%>
-      <li>
-        <strong><%= link_to employer.name, employer_path(employer)%></strong>
-      </li>
-        <ul>
-          <li>
-            <%= employer.industry%>
-          </li>
-          <li>
-            <%= employer.size%>
-          </li>
-          <li>
-            <%= employer.products%>
-          </li>
-          <li>
-            <%= employer.description%>
-          </li>
-        </ul>
-        <br>
-    <%end%>
-  </ul>
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Company Name</th>
+      <th scope="col">Industry</th>
+      <th scope="col">Size (Employees)</th>
+      <th scope="col" class="wrap">Products</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @employers.each do |e|%>
+    <tr class="double">
+      <td class="l"><%= link_to e.name, employer_path(e)%></td>
+      <td class="l"><%= e.industry %></td>
+      <td><%= e.size %></td>
+      <td class="l"><%= e.products %></td>
+    </tr>
+  <%end%>
+  </tbody>
+</table>

@@ -1,15 +1,24 @@
-<h1>People list:</h1>
 
-  <ul>
-    <% @people.each do |person|%>
-      <li>
-        <strong><%= link_to person.name, person_path(person)%></strong>
-      </li>
-        <ul>
-          <li>
-            <%= person.birthday.strftime('%B %d, %Y')%>
-          </li>
-          <br>
-        </ul>
-    <%end%>
-  </ul>
+<h1 class="c">People Index</h1>
+<hr>
+
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Current City</th>
+      <th scope="col">Current Employer</th>
+      <th scope="col">Current Position Title</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @people.each do |person|%>
+    <tr>
+      <td><%= link_to person.name, person_path(person)%></td>
+      <td><%= link_to person.cities.last.name, city_path(person.cities.last)%></td>
+      <td><%= link_to person.employers.last.name, employer_path(person.employers.last)%></td>
+      <td><%= link_to person.positions.last.title, position_path(person.positions.last)%></td>
+    </tr>
+  <%end%>
+  </tbody>
+</table>

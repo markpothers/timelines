@@ -1,13 +1,14 @@
 <%= form_with(model: @event) do |f|%>
   <div>
-        <%= f.fields_for :visitor do |v| %>
-          Visitor <%= v.label :name %>
-          <%= v.text_field :name, list: "people_autocomplete" %><br><br>
-          <datalist id="people_autocomplete">
+          <%= f.label :visitor %>
+      <%if @event.visitor%>
+      <%= f.text_field :visitor, list: "people_autocomplete", value: @event.visitor.name%><br><br>
+      <%else%>
+      <%= f.text_field :visitor, list: "people_autocomplete", value: ''%><br><br>
+      <%end%>          <datalist id="people_autocomplete">
             <%= @people.each do |person|%>
             <option value="<%=person.name%>">
           <%end%>
-        <%end%>
   </div>
   <div>
     Event <%= f.label :title %>
@@ -18,22 +19,23 @@
     <%= f.text_area :description %><br><br>
   </div> 
    <div>
-        <%= f.fields_for :destination do |destination| %>
-          Destination <%= destination.label :name %>
-          <%= destination.text_field :name, list: "cities_autocomplete" %><br><br>
-          <datalist id="cities_autocomplete">
+        <%= f.label :destination %>
+      <%if @event.destination%>
+      <%= f.text_field :destination, list: "cities_autocomplete", value: @event.destination.name %><br><br>
+      <%else%>
+      <%= f.text_field :destination, list: "cities_autocomplete", value: '' %><br><br>
+      <%end%>          <datalist id="cities_autocomplete">
           <%= @cities.each do |city|%>
             <option value="<%=city.name%>">
           <%end%>
-        <%end%>
   </div>
 
   <div>
-  Event <%= f.label :start_date %>
+  <%= f.label :start_date %>
   <%= f.date_select :start_date, :start_year => 1940 %><br><br>
   </div>
   <div>
-  Event <%= f.label :finish_date %>
+  <%= f.label :finish_date %>
   <%= f.date_select :finish_date, :start_year => 1940 %><br><br>
   </div>
   <div>

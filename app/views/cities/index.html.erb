@@ -4,27 +4,19 @@
 <table class="table table-striped">
   <thead class="thead-dark">
     <tr>
-<<<<<<< HEAD
-      <th>City</th><th>Region</th><th>Country</th><th>Average residence length</th><th>Number of residents</th>
-=======
       <th scope="col">City</th>
       <th scope="col">Region</th>
       <th scope="col">Country</th>
       <th scope="col">Average residence length</th>
->>>>>>> bootstrap
     </tr>
   </thead>
   <tbody>
   <% @cities.each do |city|%>
     <tr>
-<<<<<<< HEAD
-      <td class="left"><%= link_to city.name, city_path(city)%></td><td><%=city.region%></td><td><%=city.country%></td><td><%= city.yandm(city.average_residency)%></td><td><%= city.people.uniq.length %></td>
-=======
       <td><%= link_to city.name, city_path(city)%></td>
       <td><%=city.region%></td>
       <td><%=city.country%></td>
       <td><%= city.yandm(city.average_residency)%></td>
->>>>>>> bootstrap
     </tr>
   <%end%>
   </tbody>

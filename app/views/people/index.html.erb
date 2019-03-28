@@ -1,16 +1,4 @@
 
-<<<<<<< HEAD
-<table>
-    <tr>
-      <th>Name</th><th>Birthday</th>
-    </tr>
-  <tbody>
-    <% @people.each do |person|%>
-    <tr>
-      <td class="left"><%= link_to person.name, person_path(person) %></td><td class="left"><%=person.birthday.strftime('%B %d, %Y')%></td>
-    </tr>
-    <%end%>
-=======
 <h1 class="c">People Index</h1>
 <hr>
 
@@ -32,6 +20,5 @@
       <td><%= link_to person.positions.last.title, position_path(person.positions.last)%></td>
     </tr>
   <%end%>
->>>>>>> bootstrap
   </tbody>
 </table>

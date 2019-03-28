@@ -1,40 +1,6 @@
 <h1 class="c">Employers Index</h1>
 <hr>
 
-<<<<<<< HEAD
-<table>
-    <tr>
-      <th>Employer</th><th>Industry</th><th>Company size</th>
-    </tr>
-  <tbody>
-    <% @employers.each do |employer|%>
-    <tr>
-      <td class="left"><%= link_to employer.name, employer_path(employer)%></td><td><%=employer.industry%></td><td><%=employer.size%></td>
-    </tr>
-    <%end%>
-  </tbody>
-</table>
-
-  <ul>
-    <% @employers.each do |employer|%>
-      <li>
-        <strong><%= link_to employer.name, employer_path(employer)%></strong>
-      </li>
-        <ul>
-          <li>
-            <%= employer.industry%>
-          </li>
-          <li>
-            <%= employer.size%>
-          </li>
-          <li>
-            <%= employer.products%>
-          </li>
-        </ul>
-        <br>
-    <%end%>
-  </ul>
-=======
 <table class="table table-striped">
   <thead class="thead-dark">
     <tr>
@@ -55,4 +21,3 @@
   <%end%>
   </tbody>
 </table>
->>>>>>> bootstrap

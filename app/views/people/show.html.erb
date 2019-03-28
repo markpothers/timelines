@@ -15,7 +15,7 @@
   <tbody>
     <% @person.sorted_positions.each do |p| %>
     <tr>
-      <td class="left"><%=p.title%></td><td><%=p.employer.name%></td><td><%=p.city.name%></td><td><%= p.start_date.strftime('%B %Y') %></td><td><%= p.finish_date.strftime('%B %Y') %></td>
+      <td class="left"><%=link_to p.title, position_path(p)%></td><td><%=link_to p.employer.name, employer_path(p.employer)%></td><td><%=link_to p.city.name, city_path(p.city)%></td><td><%= p.start_date.strftime('%B %Y') %></td><td><%= p.finish_date.strftime('%B %Y') %></td>
     </tr>
     <%end%>
   </tbody>

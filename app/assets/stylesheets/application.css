@@ -98,3 +98,7 @@ td.l {
 tr.double {
   height: 8ch;
 }
+
+a#new_button {
+  margin-right: 1ch;
+}

@@ -8,6 +8,7 @@
       <th scope="col">Region</th>
       <th scope="col">Country</th>
       <th scope="col">Average residence length</th>
+      <th scope="col">Number of Database Residents</th>
     </tr>
   </thead>
   <tbody>
@@ -16,7 +17,8 @@
       <td><%= link_to city.name, city_path(city)%></td>
       <td><%=city.region%></td>
       <td><%=city.country%></td>
-      <td><%= city.yandm(city.average_residency)%></td>
+      <td><%=city.yandm(city.average_residency)%></td>
+      <td><%=city.people.uniq.length%></td>
     </tr>
   <%end%>
   </tbody>

@@ -12,7 +12,7 @@ class Person < ApplicationRecord
 
   def parallel_positions
     coincident_positions = []
-    other_positions = Position.all-self.sorted_positions
+    other_positions = Position.all.sort_by{|position| position.start_date }-self.sorted_positions
     self.sorted_positions.each do |my_position|
       other_positions.each do |position|
         if my_position.city == position.city && my_position.start_date <= position.finish_date && my_position.finish_date >= position.start_date

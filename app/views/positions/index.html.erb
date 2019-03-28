@@ -1,23 +1,14 @@
 <h1>Positions list:</h1>
 
-  <ul>
+<table>
+    <tr>
+      <th>Title</th><th>Company</th><th>City</th><th>From</th><th>Until</th>
+    </tr>
+  <tbody>
     <% @positions.each do |position|%>
-      <li>
-        <strong><%= link_to position.title, position_path(position)%></strong>
-      </li>
-        <ul>
-          <li>
-            <%= link_to position.person.name, person_path(position.person)%>
-          </li>
-          <li>
-            <%= link_to position.employer.name, employer_path(position.employer)%>
-          </li>
-          <li>
-            <%= position.description%>
-          </li>
-          <li>
-            From: <%= position.start_date.strftime('%b %Y')%>, until: <%=position.finish_date.strftime('%b %Y')%>
-          </li><br>
-        </ul>
+    <tr>
+      <td class="left"><%= link_to position.title, position_path(position)%></td><td class="left"><%=link_to position.employer.name, employer_path(position.employer)%></td><td><%= link_to position.city.name, city_path(position.city) %></td><td><%=position.start_date.strftime('%b %Y')%></td><td><%= position.finish_date.strftime('%b %Y')%></td>
+    </tr>
     <%end%>
-  </ul>
+  </tbody>
+</table>

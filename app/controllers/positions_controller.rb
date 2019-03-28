@@ -1,7 +1,7 @@
 class PositionsController < ApplicationController
 
   def index
-    @positions = Position.all
+    @positions = Position.all.sort_by{ |position| position.start_date }
   end
 
   def show

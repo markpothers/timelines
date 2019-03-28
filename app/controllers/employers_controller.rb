@@ -1,7 +1,7 @@
 class EmployersController < ApplicationController
 
   def index
-    @employers = Employer.all.sort_by{ |employer| employer.people.length }.reverse
+    @employers = Employer.all.sort_by{ |employer| employer.name }
   end
 
   def show
@@ -17,7 +17,7 @@ class EmployersController < ApplicationController
       if @employer.save
         redirect_to employer_path(@employer)
       else
-        redirect_to new_employer_path
+        render :new
       end
   end
 

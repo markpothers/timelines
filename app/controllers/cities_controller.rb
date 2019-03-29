@@ -12,11 +12,11 @@ class CitiesController < ApplicationController
     @positions = Position.where('title LIKE ?', "%#{@query}%")
     @events = Event.where('title LIKE ?', "%#{@query}%")
     @results = []
-    if @people != nil then @results << @people end 
-    if @cities != nil then @results << @cities end
-    if @employers != nil then @results << @employers end
-    if @positions != nil then @results << @positions end
-    if @events != nil then @results << @events end
+    if @people != [] then @results << @people end 
+    if @cities != [] then @results << @cities end
+    if @employers != [] then @results << @employers end
+    if @positions != [] then @results << @positions end
+    if @events != [] then @results << @events end
     @results = @results.flatten.sort_by{|result| result.class.to_s == "Event" || result.class.to_s == "Position" ? result.title.similar(params[:query]) : result.name.similar(params[:query])}.reverse
   end
 

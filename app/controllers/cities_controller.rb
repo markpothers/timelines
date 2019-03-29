@@ -1,5 +1,7 @@
 class CitiesController < ApplicationController
 
+  skip_before_action :authenticate, :only => [:home]
+
   def home
   end
 

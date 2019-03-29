@@ -10,88 +10,57 @@ class Person < ApplicationRecord
     self.positions.sort_by{|position|position.start_date}
   end
 
-  def parallel_positions
-    coincident_locations = []
-    self.sorted_positions.each do |my_position|
-      other_positions = Position.where("city_id = #{my_position.city.id}")-self.sorted_positions
-      other_positions.each do |position|
-        if my_position.city == position.city && my_position.start_date <= position.finish_date && my_position.finish_date >= position.start_date
-            if my_position.start_date >= position.start_date
-              last_start = my_position.start_date
-            else
-              last_start = position.start_date
-            end
-            if my_position.finish_date <= position.finish_date
-              first_finish = my_position.finish_date
-            else
-              first_finish = position.finish_date
-            end
-          coincident_locations << [position, last_start, first_finish]
-        end
-      end
-    end
-    coincident_locations
-  end
-
-  def parallel_positions
-
-    coincident_locations = [counterpart, city, overlapstart, overlapfinish]
-
-    coincident_locations
-  end
-  
-
-  def co_located
-    coincident_locations = []
-
-
-
-    self.sorted_positions.each do |my_position|
-      other_positions = Position.where("city_id = #{my_position.city.id}")-self.sorted_positions
-      other_positions.each do |position|
-        if my_position.city == position.city && my_position.start_date <= position.finish_date && my_position.finish_date >= position.start_date
- byebug
-          find_overlap(my_position, position)
-          coincident_locations << [position, last_start, first_finish]
-        end
-      end
-    end
-    coincident_locations
-  end
-
-
-
-
-
-
-
   def find_overlap(my_position, their_position)
     if my_position.start_date >= their_position.start_date
       last_start = my_position.start_date
     else
-      last_start = position.start_date
+      last_start = their_position.start_date
     end
-    if my_position.finish_date <= position.finish_date
+    if my_position.finish_date <= their_position.finish_date
       first_finish = my_position.finish_date
     else
-      first_finish = position.finish_date
+      first_finish = their_position.finish_date
     end
     overlap = [last_start, first_finish]
   end
 
+  def parallel_positions
+    co_locations = []
+    co_locations = co_locations.concat self.co_located(self.sorted_positions, Position)
+    co_locations = co_locations.concat self.co_located(self.events_as_visitor, Position)
+    co_locations = co_locations.concat self.co_located(self.sorted_positions, Event)
+    co_locations = co_locations.concat self.co_located(self.events_as_visitor, Event)
+  end
 
+  def co_located(my_location, their_class)
+    coincident_locations = []
+    my_location.each do |location|
 
+      if my_location == self.sorted_positions && their_class == Position
+        their_locations = their_class.where("city_id = #{location.city.id}")-my_location
+      elsif my_location == self.events_as_visitor && their_class == Position
+        their_locations = their_class.where("city_id = #{location.destination.id}")-my_location
+      elsif my_location == self.sorted_positions && their_class == Event
+        their_locations = their_class.where("destination_id = #{location.city.id}")-my_location
+      else my_location == self.events_as_visitor && their_class == Event
+        their_locations = their_class.where("destination_id = #{location.destination.id}")-my_location
+      end
 
+      their_locations.each do |their_location|
+        if location.start_date <= their_location.finish_date && location.finish_date >= their_location.start_date
+          overlap = find_overlap(location, their_location)
 
+      if their_class == Position
+        coincident_locations << [their_location.person, their_location.city.name, overlap[0], overlap[1]]
+      else
+        coincident_locations << [their_location.visitor, their_location.destination.name, overlap[0], overlap[1]]
+      end
 
-
-
-
-
-
-
-
-
+        end
+      end
+    end
+    coincident_locations
+  end
 
   def timeline
     timeline = []

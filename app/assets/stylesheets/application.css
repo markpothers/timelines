@@ -12,11 +12,7 @@
  *
  *= require custom.scss
  */
-/* form {
-  display: inline;
-  font-family: Arial, Helvetica, sans-serif;
-  text-indent: 20pt;
-}
+/* 
 input {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -68,11 +64,13 @@ div {
 .h1pic {
   width: 850px;
 }
+*/
+
 .face {
   position: absolute;
-  right: 700px;
-  top: 50px;
-} */
+  right: 800px;
+  top: 85px;
+} 
 
 h1.c {
   text-align: center;
@@ -80,6 +78,7 @@ h1.c {
 
 th {
   text-align: center;
+  text-indent: 20pt;
 }
 
 th.wrap {
@@ -88,6 +87,7 @@ th.wrap {
 
 td {
   text-align: center;
+  text-indent: 20pt;
 }
 
 td.l {
@@ -97,4 +97,18 @@ td.l {
 
 tr.double {
   height: 8ch;
+}
+
+h1 {
+  text-indent: 20pt;
+}
+h3 {
+  text-indent: 20pt;
+}
+h4 {
+  text-indent: 20pt;
+}
+form {
+  display: inline;
+  text-indent: 20pt;
 }

@@ -1,14 +1,27 @@
-<h1>Positions list:</h1>
+<h1 class="c">Positions Index</h1>
+<hr>
 
-<table>
+<table class="table table-striped">
+  <thead class="thead-dark">
     <tr>
-      <th>Title</th><th>Company</th><th>City</th><th>From</th><th>Until</th>
+      <th scope="col">Title</th>
+      <th scope="col">Held By</th>
+      <th scope="col">Company</th>
+      <th scope="col">City</th>
+      <th scope="col">From</th>
+      <th scope="col">Until</th>
     </tr>
+  </thead>
   <tbody>
-    <% @positions.each do |position|%>
+  <% @positions.each do |p|%>
     <tr>
-      <td class="left"><%= link_to position.title, position_path(position)%></td><td class="left"><%=link_to position.employer.name, employer_path(position.employer)%></td><td><%= link_to position.city.name, city_path(position.city) %></td><td><%=position.start_date.strftime('%b %Y')%></td><td><%= position.finish_date.strftime('%b %Y')%></td>
+      <td><%= link_to p.title, position_path(p)%></td>
+      <td><%= link_to p.person.name, person_path(p.person) %></td>
+      <td><%= link_to p.employer.name, employer_path(p.employer) %></td>
+      <td><%= link_to p.city.name, city_path(p.city) %></td>
+      <td><%=p.start_date.strftime('%b %Y')%></td>
+      <td><%=p.finish_date.strftime('%b %Y')%></td>
     </tr>
-    <%end%>
+  <%end%>
   </tbody>
 </table>

@@ -1,0 +1,29 @@
+<h1 class="c">Search Results</h1>
+<hr>
+
+<%if @results == []%>
+    <h3>There are no entries that match your search term.</h3>
+<%else%>
+
+    <table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+        <th scope="col">Result</th>
+        <th scope="col">Result Type</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% @results.each do |result|%>
+        <tr>
+            <%if result.class.to_s != "Position" && result.class.to_s != "Event"%>
+                <td><%= link_to result.name, "#{result.class.to_s.pluralize}/#{result.id}"%></td>
+            <%else%>
+                <td><%= link_to result.title, "#{result.class.to_s.pluralize}/#{result.id}"%></td>
+            <%end%>
+        <td><%=result.class.to_s%></td>
+        </tr>
+    <%end%>
+    </tbody>
+    </table>
+
+<%end%>

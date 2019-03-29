@@ -43,6 +43,7 @@
 
 <br>
 
+<% if @person.parallel_positions != []%>
 <h3>Parallel lives:</h3>
 <ul><li>These people have been in the same cities as <%=@person.name%> at the same times:</li></ul>
  <table>
@@ -50,13 +51,15 @@
       <th>Counterpart</th><th>City</th><th>Overlap beginning</th><th>Overlap end</th>
     </tr>
   <tbody>
-    <% @person.parallel_positions.each do |pp| %>
+  
+    <% @person.parallel_positions.sort_by{|instance| instance[2]}.each do |pp| %>
     <tr>
       <td class="left"><%=link_to pp[0].name, person_path(pp[0])%></td><td><%=pp[1]%></td><td><%= pp[2].strftime('%B %Y') %></td><td><%= pp[3].strftime('%B %Y') %></td>
     </tr>
     <%end%>
   </tbody>
 </table>
+<%end%>
 <br><br>
 
 <br>

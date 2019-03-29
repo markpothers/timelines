@@ -1,14 +1,23 @@
 class CitiesController < ApplicationController
+  require 'similar_text'
 
   def home
   end
 
   def search
-    @cities = City.all
-    @people = Person.all
-    @employers = Employer.all
-    @positions = Position.all 
-    @events = Event.all
+    @query = params[:query]
+    @cities = City.where('name LIKE ?', "%#{@query}%")
+    @people = Person.where('name LIKE ?', "%#{@query}%")
+    @employers = Employer.where('name LIKE ?', "%#{@query}%")
+    @positions = Position.where('title LIKE ?', "%#{@query}%")
+    @events = Event.where('title LIKE ?', "%#{@query}%")
+    @results = []
+    if @people != [] then @results << @people end 
+    if @cities != [] then @results << @cities end
+    if @employers != [] then @results << @employers end
+    if @positions != [] then @results << @positions end
+    if @events != [] then @results << @events end
+    @results = @results.flatten.sort_by{|result| result.class.to_s == "Event" || result.class.to_s == "Position" ? result.title.similar(params[:query]) : result.name.similar(params[:query])}.reverse
   end
 
   def index

@@ -13,8 +13,8 @@
   <tbody>
   <% @employers.each do |e|%>
     <tr class="double">
-      <td class="l"><%= link_to e.name, employer_path(e)%></td>
-      <td class="l"><%= e.industry %></td>
+      <td><%= link_to e.name, employer_path(e)%></td>
+      <td><%= e.industry %></td>
       <td><%= e.size %></td>
       <td class="l"><%= e.products %></td>
     </tr>

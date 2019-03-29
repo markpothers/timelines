@@ -36,17 +36,21 @@ CSV.foreach("./lib/b_corp_impact_data_modified.csv", :encoding => 'windows-1251:
             new_city.save
             new_company.save
 
-            start_date = Faker::Date.between(20.years.ago, Date.today)
-            new_position = Position.new(
+            chosen_person = Person.all.sample
+            if chosen_person.positions = []
+                start_date = Faker::Date.between(20.years.ago, Date.today)
+            else
+                start_date = chosen_person.positions.last.finish_date
+            end
+            new_position = Position.create(
                 employer_id: new_company.id,
                 city_id: new_city.id,
-                person_id: Person.all.sample.id,
+                person_id: chosen_person.id,
                 title: Faker::Job.title,
                 description: Faker::Job.key_skill,
                 start_date: start_date,
                 finish_date: Faker::Date.between(start_date, 1.year.from_now)
             )            
-            new_position.save
         end
     end
     stored_name = row[0] 
@@ -65,7 +69,11 @@ end
 end
 
 Person.all.each do |p|
-    start_date = Faker::Date.between(20.years.ago, Date.today)
+    if p.positions = []
+        start_date = Faker::Date.between(20.years.ago, Date.today)
+    else
+        start_date = p.positions.last.finish_date
+    end
     Position.create(
         employer_id: Employer.all.sample.id,
         city_id: City.all.sample.id,

@@ -1,15 +1,24 @@
-<h1>Events list:</h1>
 
+<h1 class="c">Events Index</h1>
+<hr>
 
-<table>
+<table class="table table-striped">
+  <thead class="thead-dark">
     <tr>
-      <th>Visitor</th><th>Title</th><th>City</th><th>During</th>
+      <th scope="col">Visitor</th>
+      <th scope="col">Title</th>
+      <th scope="col">City</th>
+      <th scope="col">During</th>
     </tr>
+  </thead>
   <tbody>
-    <% @events.each do |event|%>
+  <% @events.each do |e|%>
     <tr>
-      <td class="left"><%= link_to event.visitor.name, person_path(event.visitor)%></td><td class="left"><%=link_to event.title, event_path(event)%></td><td><%= link_to event.destination.name, city_path(event.destination) %></td><td><%=event.start_date.strftime('%B, %Y')%></td>
+      <td><%= link_to e.visitor.name, person_path(e.visitor)%></td>
+      <td><%= link_to e.title, event_path(e) %></td>
+      <td><%= link_to e.destination.name, city_path(e.destination) %></td>
+      <td><%= e.start_date.strftime('%B, %Y') %></td>
     </tr>
-    <%end%>
+  <%end%>
   </tbody>
 </table>

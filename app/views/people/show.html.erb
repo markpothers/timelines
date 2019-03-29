@@ -25,10 +25,12 @@
   </tbody>
 </table>
 
+<br>
+
 <h3>Personal Timeline:</h3>
  <table>
     <tr>
-      <th>Reson</th><th>Position</th><th>City</th><th>Arrival Date</th><th>Departure Date</th>
+      <th>Reason</th><th>Position</th><th>City</th><th>Arrival Date</th><th>Departure Date</th>
     </tr>
   <tbody>
     <% @person.timeline.each do |p| %>
@@ -39,6 +41,8 @@
   </tbody>
 </table>
 
+<br>
+
 <h3>Parallel lives:</h3>
 <ul><li>These people have been in the same cities as <%=@person.name%> at the same times:</li></ul>
  <table>
@@ -48,12 +52,14 @@
   <tbody>
     <% @person.parallel_positions.each do |pp| %>
     <tr>
-      <td class="left"><%=link_to pp[0].person.name, person_path(pp[0].person)%></td><td><%=link_to pp[0].city.name, city_path(pp[0].city)%></td><td><%= pp[1].strftime('%B %Y') %></td><td><%= pp[2].strftime('%B %Y') %></td>
+      <td class="left"><%=link_to pp[0].name, person_path(pp[0])%></td><td><%=pp[1]%></td><td><%= pp[2].strftime('%B %Y') %></td><td><%= pp[3].strftime('%B %Y') %></td>
     </tr>
     <%end%>
   </tbody>
 </table>
 <br><br>
+
+<br>
 
 <%=form_tag("/people/#{@person.id}/edit", method: "get") do |f| %>
   <%=submit_tag "Edit"%>

@@ -42,8 +42,9 @@
     </ul>
 
       <%if !current_page?('/') && !current_page?('/search')%>
-        <a class="btn btn-primary" href=<%="/#{params[:controller]}/new"%> id="new_button">Create New <%=params[:controller].singularize.titleize%></a>    
+        <a class="btn btn-primary" href=<%="/#{params[:controller]}/new"%> id="new_button">Create New <%=params[:controller].singularize.titleize%></a>
       <%end%>
+      
     <form class="form-inline my-2 my-lg-0" accept-charset="UTF-8" action="/search" method="get">
       <input name="utf8" type="hidden" value="&#x2713;">
       <%= text_field_tag :query, params[:query], :class => "form-control mr-sm-2", :placeholder => "Search Indexes", :type => "search"%>
@@ -56,6 +57,15 @@
 
 <%= yield %>
   </body>
+  <footer>
+    <hr>
+
+    <%=form_tag("/sessions/#{session[:user_id]}", method: :post) %>
+    <input type="hidden" name="_method" value="DELETE" />
+    <%=submit_tag "Logout" %>
+ 
+  </footer>
+
 </html>
 
 

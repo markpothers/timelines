@@ -1,5 +1,7 @@
 require 'faker'
 require 'random_user_generator'
+Position.destroy_all
+Event.destroy_all
 City.destroy_all
 Person.destroy_all
 Employer.destroy_all

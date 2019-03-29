@@ -7,7 +7,7 @@
       <%= f.text_field :person, list: "people_autocomplete", value: ''%><br><br>
       <%end%>
       <datalist id="people_autocomplete">
-      <%= @people.each do |person|%>
+      <% @people.each do |person|%>
         <option value="<%=person.name%>">
       <%end%>
   </div>
@@ -19,7 +19,7 @@
       <%= f.text_field :employer, list: "employers_autocomplete", value: ''%><br><br>
       <%end%>
       <datalist id="employers_autocomplete">
-      <%= @employers.each do |employer|%>
+      <% @employers.each do |employer|%>
         <option value="<%=employer.name%>">
       <%end%>
   </div>
@@ -31,7 +31,7 @@
       <%= f.text_field :city, list: "cities_autocomplete", value: '' %><br><br>
       <%end%>
       <datalist id="cities_autocomplete">
-      <%= @cities.each do |city|%>
+      <% @cities.each do |city|%>
         <option value="<%=city.name%>">
       <%end%>
   </div>

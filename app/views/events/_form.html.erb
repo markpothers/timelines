@@ -6,7 +6,7 @@
       <%else%>
       <%= f.text_field :visitor, list: "people_autocomplete", value: ''%><br><br>
       <%end%>          <datalist id="people_autocomplete">
-            <%= @people.each do |person|%>
+            <% @people.each do |person|%>
             <option value="<%=person.name%>">
           <%end%>
   </div>
@@ -25,7 +25,7 @@
       <%else%>
       <%= f.text_field :destination, list: "cities_autocomplete", value: '' %><br><br>
       <%end%>          <datalist id="cities_autocomplete">
-          <%= @cities.each do |city|%>
+          <% @cities.each do |city|%>
             <option value="<%=city.name%>">
           <%end%>
   </div>

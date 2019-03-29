@@ -1,44 +1,48 @@
+
+<hr>
+<div class="container">
 <%= form_with(model: @event) do |f|%>
-  <div>
-          <%= f.label :visitor %>
+  <div class="form-group">
+  <%= f.label :visitor%>
       <%if @event.visitor%>
-      <%= f.text_field :visitor, list: "people_autocomplete", value: @event.visitor.name%><br><br>
-      <%else%>
-      <%= f.text_field :visitor, list: "people_autocomplete", value: ''%><br><br>
+  <%= f.text_field :visitor, :class => "form-control", list: "people_autocomplete", value: @event.visitor.name %>
+        <%else%>
+              <%= f.text_field :visitor, :class =>"form-control", list: "people_autocomplete", value: ''%>
       <%end%>          <datalist id="people_autocomplete">
             <%= @people.each do |person|%>
             <option value="<%=person.name%>">
           <%end%>
   </div>
-  <div>
-    Event <%= f.label :title %>
-    <%= f.text_field :title %><br><br>
+  <div class="form-group">
+  <%= f.label :title %>
+  <%= f.text_field :title, :class => "form-control"%>
   </div>
-   <div>
-    Event <%= f.label :description %>
-    <%= f.text_area :description %><br><br>
-  </div> 
-   <div>
-        <%= f.label :destination %>
+    <div class="form-group">
+  <%= f.label :destination%>
       <%if @event.destination%>
-      <%= f.text_field :destination, list: "cities_autocomplete", value: @event.destination.name %><br><br>
+      <%= f.text_field :destination, :class => "form-control", list: "cities_autocomplete", value: @event.destination.name %>
       <%else%>
-      <%= f.text_field :destination, list: "cities_autocomplete", value: '' %><br><br>
+      <%= f.text_field :destination, :class => "form-control", list: "cities_autocomplete", value: '' %>
       <%end%>          <datalist id="cities_autocomplete">
           <%= @cities.each do |city|%>
             <option value="<%=city.name%>">
           <%end%>
   </div>
+  <div class="form-group">
+  <%= f.label :description%>
+  <%= f.text_field :description, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+  <%= f.label :start_date %>
+  <%= f.date_select :start_date, :start_year=>1920, :end_year=>Date.today.year, :class => "form-control form-control-lg" %>
+  </div>
+    <div class="form-group">
+  <%= f.label :finish_date %>
+  <%= f.date_select :finish_date, :start_year=>1920, :end_year=>Date.today.year, :class => "form-control form-control-lg" %>
+  </div>
 
   <div>
-  <%= f.label :start_date %>
-  <%= f.date_select :start_date, :start_year => 1940 %><br><br>
-  </div>
-  <div>
-  <%= f.label :finish_date %>
-  <%= f.date_select :finish_date, :start_year => 1940 %><br><br>
-  </div>
-  <div>
-  <%= f.submit %>
+  <%= f.submit :class => "btn btn-primary" %>
   </div>
 <%end%>
+</div>

@@ -4,43 +4,65 @@
       <%= @city.name%>, <%=@city.region%>, <%=@city.country%>
     </li>
 </ul>
+<hr>
 
-<br>
-
-<h4>This city has been host to these people as residents:</h4>
-<table>
+<hr>
+<h5>This city has been host to these people as residents:</h5>
+<table class="table table-striped">
+  <thead class="thead-dark">
     <tr>
-      <th>Name</th><th>Position held</th><th>Employer</th><th>From</th><th>Until</th>
+      <th scope="col">Name</th>
+      <th scope="col">Position held</th>
+      <th scope="col">Employer</th>
+      <th scope="col">From</th>
+      <th scope="col">Until</th>
     </tr>
+  </thead>
   <tbody>
   <% @city.positions.each do |position|%>
     <tr>
-      <td class="left"><%= link_to position.person.name, person_path(position.person) %></td><td><%= position.title %></td><td><%= position.employer.name %></td><td><%= position.start_date.strftime('%b %Y') %></td><td><%=position.finish_date.strftime('%b %Y')%></td>
+      <td><%= link_to position.person.name, person_path(position.person) %></td>
+      <td><%= link_to position.title, position_path(position)%></td>
+      <td><%= link_to position.employer.name, employer_path(position.employer) %></td>
+      <td><%=position.start_date.strftime('%b %Y') %></td>
+      <td><%=position.finish_date >= Date.today ? "Current" : position.finish_date.strftime('%b %Y')%></td>
     </tr>
-    <%end%>
+  <%end%>
   </tbody>
 </table>
+<hr>
 
-<br>
+<%if @city.co_residents != []%>
+<hr>
+<h5>These residents lived in <%=@city.name%> at the same time:</h5>
 
-<h4>These residents lived in <%=@city.name%> at the same time:</h4>
-<table>
+<table class="table table-striped">
+  <thead class="thead-dark">
     <tr>
-      <th>Resident 1</th><th>Resident 2</th><th>Overlap start date</th><th>Overlap finish date</th>
+      <th scope="col">Resident 1</th>
+      <th scope="col">Resident 2</th>
+      <th scope="col">Overlap Start</th>
+      <th scope="col">Overlap Finish</th>
     </tr>
+  </thead>
   <tbody>
-    <% @city.co_residents.each do |co_resident_pair|%>
+  <% @city.co_residents.each do |co_resident_pair|%>
     <tr>
-      <td class="left"><%= co_resident_pair[0].person.name%></td><td><%=co_resident_pair[1].person.name%></td><td><%=co_resident_pair[2].strftime('%b %Y')%></td><td><%=co_resident_pair[3].strftime('%b %Y')%></td>
+      <td><%=link_to co_resident_pair[0].person.name, person_path(co_resident_pair[0].person)%></td>
+      <td><%=link_to co_resident_pair[1].person.name, person_path(co_resident_pair[1].person)%></td>
+      <td><%=co_resident_pair[2].strftime('%b %Y')%></td>
+      <td><%=co_resident_pair[3] >= Date.today ? "Current" : co_resident_pair[3].strftime('%b %Y')%></td>
     </tr>
-    <%end%>
+  <%end%>
   </tbody>
 </table>
-<br><br>
+<hr>
+<%end%>
 
 <%=form_tag("/cities/#{@city.id}/edit", method: "get") do |f| %>
-<%=submit_tag "Edit"%>
+<a class="indent"><button class="btn btn-primary" type="submit">Edit City</button></a>
 <%end%>
 <%=form_tag("/cities/#{@city.id}", method: "delete") do |f| %>
-  <%=submit_tag "Delete"%>
+  <a><button class="btn btn-primary" type="submit">Delete City</button></a>
 <%end%>
+<hr>

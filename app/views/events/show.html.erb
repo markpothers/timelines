@@ -11,16 +11,13 @@
     <%= @event.description%>
     </li>
     <li>
-      <%= @event.start_date.strftime('%B %d, %Y')%>
-    </li>
-    <li>
-      <%= @event.finish_date.strftime('%B %d, %Y')%>
+      <%= @event.start_date.strftime('%B %d, %Y')%> - <%= @event.finish_date.strftime('%B %d, %Y')%>
     </li>
   </ul>
 
 <%=form_tag("/events/#{@event.id}/edit", method: "get") do |f| %>
-<%=submit_tag "Edit"%>
+<a class="indent"><button class="btn btn-primary" type="submit">Edit Position</button></a>
 <%end%>
 <%=form_tag("/events/#{@event.id}", method: "delete") do |f| %>
-  <%=submit_tag "Delete"%>
+  <a><button class="btn btn-primary" type="submit">Delete Person</button></a>
 <%end%>

@@ -13,7 +13,7 @@
       Description: <%= @position.description%>
     </li>
     <li>
-      From: <%= @position.start_date.strftime('%b %Y')%>, Until: <%= @position.finish_date.strftime('%b %Y')%>
+      From: <%= @position.start_date.strftime('%b %Y')%>, <%= @position.finish_date >= Date.today ? "Current Position" : "Until: "+@position.finish_date.strftime('%b %Y')%>
     </li>
     <li>
       <%= @position.duration %>
@@ -21,8 +21,8 @@
   </ul>
 
 <%=form_tag("/positions/#{@position.id}/edit", method: "get") do |f| %>
-<%=submit_tag "Edit"%>
+<a class="indent"><button class="btn btn-primary" type="submit">Edit Position</button></a>
 <%end%>
 <%=form_tag("/positions/#{@position.id}", method: "delete") do |f| %>
-  <%=submit_tag "Delete"%>
+  <a><button class="btn btn-primary" type="submit">Delete Position</button></a>
 <%end%>

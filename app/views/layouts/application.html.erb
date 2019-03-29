@@ -41,8 +41,13 @@
       </li>
     </ul>
 
+<<<<<<< HEAD
       <%if !current_page?('/') && !current_page?('/search')%>
         <a class="btn btn-primary" href=<%="/#{params[:controller]}/new"%> id="new_button">Create New <%=params[:controller].singularize.titleize%></a>    
+=======
+      <%if !current_page?('/')%>
+        <a class="btn btn-primary" href=<%="/#{params[:controller]}/new"%> id="new_button">Create New <%=params[:controller].singularize.titleize%></a>
+>>>>>>> login
       <%end%>
     <form class="form-inline my-2 my-lg-0" accept-charset="UTF-8" action="/search" method="get">
       <input name="utf8" type="hidden" value="&#x2713;">
@@ -56,6 +61,15 @@
 
 <%= yield %>
   </body>
+  <footer>
+    <hr>
+
+    <%=form_tag("/sessions/#{session[:user_id]}", method: :post) %>
+    <input type="hidden" name="_method" value="DELETE" />
+    <%=submit_tag "Logout" %>
+ 
+  </footer>
+
 </html>
 
 

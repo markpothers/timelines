@@ -1,6 +1,8 @@
 class CitiesController < ApplicationController
   require 'similar_text'
 
+  skip_before_action :authenticate, :only => [:home]
+
   def home
   end
 

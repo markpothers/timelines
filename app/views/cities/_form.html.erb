@@ -1,17 +1,21 @@
-<%= form_with model: @city, class: "form-inline" do |f|%>
-  <div>
-  <%= f.label :name, class: "form-control" %>
-  <%= f.text_field :name, class: "form-control" %><br><br>
+<hr>
+<div class="container">
+<%= form_with(model: @city) do |f|%>
+  <div class="form-group">
+  <%= f.label :name %>
+  <%= f.text_field :name, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+  <%= f.label :region %>
+  <%= f.text_field :region, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+  <%= f.label :country %>
+  <%= f.text_field :country, :class => "form-control"%>
   </div>
   <div>
-  <%= f.label :region, class: "form-control" %>
-  <%= f.text_field :region, class: "form-control" %><br><br>
-  </div>
-  <div>
-  <%= f.label :country, class: "form-control" %>
-  <%= f.text_field :country, class: "form-control" %><br><br>
-  </div>
-  <div>
-  <%= f.submit %>
+  <%= f.submit :class => "btn btn-primary" %>
   </div>
 <%end%>
+</div>
+

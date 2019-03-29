@@ -1,53 +1,57 @@
+<hr>
+<div class="container">
 <%= form_with(model: @position) do |f|%>
-  <div>
+  <div class= "form-group">
     <%= f.label :person %>
       <%if @position.person%>
-      <%= f.text_field :person, list: "people_autocomplete", value: @position.person.name%><br><br>
+      <%= f.text_field :person, class:"form-control", list: "people_autocomplete", value: @position.person.name%>
       <%else%>
-      <%= f.text_field :person, list: "people_autocomplete", value: ''%><br><br>
+      <%= f.text_field :person, class:"form-control", list: "people_autocomplete", value: ''%>
       <%end%>
       <datalist id="people_autocomplete">
       <% @people.each do |person|%>
         <option value="<%=person.name%>">
       <%end%>
   </div>
-  <div>
+  <div class="form-group">
     <%= f.label :employer %>
       <%if @position.employer%>
-      <%= f.text_field :employer, list: "employers_autocomplete", value: @position.employer.name%><br><br>
+      <%= f.text_field :employer, class:"form-control", list: "employers_autocomplete", value: @position.employer.name%>
       <%else%>
-      <%= f.text_field :employer, list: "employers_autocomplete", value: ''%><br><br>
+      <%= f.text_field :employer, class:"form-control", list: "employers_autocomplete", value: ''%>
       <%end%>
       <datalist id="employers_autocomplete">
       <% @employers.each do |employer|%>
         <option value="<%=employer.name%>">
       <%end%>
   </div>
-  <div>
+  <div class="form-group">
     <%= f.label :city %>
       <%if @position.city%>
-      <%= f.text_field :city, list: "cities_autocomplete", value: @position.city.name %><br><br>
+      <%= f.text_field :city, class:"form-control", list: "cities_autocomplete", value: @position.city.name %>
       <%else%>
-      <%= f.text_field :city, list: "cities_autocomplete", value: '' %><br><br>
+      <%= f.text_field :city, class:"form-control", list: "cities_autocomplete", value: '' %>
       <%end%>
       <datalist id="cities_autocomplete">
       <% @cities.each do |city|%>
         <option value="<%=city.name%>">
       <%end%>
   </div>
-  <div>
-  Position <%= f.label :title %>
-  <%= f.text_field :title %><br><br>
+  <div class="form-group">
+  <%= f.label :title %>
+  <%= f.text_field :title, class:"form-control" %>
   </div>
   <div>
-  Position <%= f.label :start_date %>
-  <%= f.date_select :start_date, :start_year => 1940, :end_year => Date.today.year+2 %><br><br>
+  <%= f.label :start_date %>
+  <%= f.date_select :start_date, :start_year => 1940, :end_year => Date.today.year+2, class:"form-control" %>
   </div>
   <div>
-  Position <%= f.label :finish_date %>
-  <%= f.date_select :finish_date, :start_year => 1940 %><br><br>
+  <%= f.label :finish_date %>
+  <%= f.date_select :finish_date, :start_year => 1940, class:"form-control" %>
   </div>
   <div>
-  <%= f.submit %>
+  <br><br>
+  <%= f.submit :class => "btn btn-primary" %>
   </div>
 <%end%>
+</div>

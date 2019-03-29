@@ -17,9 +17,10 @@
     <li>
       <%= @employer.description%>
     </li>
-
   </ul>
+  <hr>
 
+<hr>
 <h4><%=@employer.name %> has an office in:</h4>
   <ul>
     <%@employer.cities.uniq.each do |city|%>
@@ -28,7 +29,8 @@
     </li>
     <%end%>
   </ul>
-
+  <hr>
+<hr>
 <h4>These people have worked at <%=@employer.name %>:</h4>
   <ul>
     <%@employer.sorted_positions.each do |position|%>
@@ -37,26 +39,15 @@
     </li>
     <%end%>
   </ul>
-
-    <h4>These people have worked at <%=@employer.name %> at the same time:</h4>
-      <table>
-          <tr>
-            <th>Employee 1</th><th>Employee 2</th><th>Overlap start date</th><th>Overlap finish date</th>
-          </tr>
-        <tbody>
-          <%@employer.coworkers.each do |coworker|%>
-          <tr>
-            <td class="left"><%= coworker[0].person.name %></td><td><%=coworker[1].person.name%></td><td><%=coworker[2].strftime('%b %Y')%></td><td><%=coworker[3].strftime('%b %Y')%></td>
-          </tr>
-          <%end%>
-        </tbody>
-      </table>
-    <br><br>
+<hr>
+<hr>
 
 <%=form_tag("/employers/#{@employer.id}/edit", method: "get") do |f| %>
-<%=submit_tag "Edit"%>
+<a class="indent"><button class="btn btn-primary" type="submit">Edit Employer</button></a>
 <%end%>
 <%=form_tag("/employers/#{@employer.id}", method: "delete") do |f| %>
-  <%=submit_tag "Delete"%>
+  <a><button class="btn btn-primary" type="submit">Delete Employer</button></a>
 <%end%>
 </div>
+
+<hr>

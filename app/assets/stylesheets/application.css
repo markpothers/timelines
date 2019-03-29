@@ -99,6 +99,7 @@ tr.double {
   height: 8ch;
 }
 
+<<<<<<< HEAD
 h1 {
   text-indent: 20pt;
 }
@@ -112,3 +113,8 @@ form {
   display: inline;
   text-indent: 20pt;
 }
+=======
+a#new_button {
+  margin-right: 1ch;
+}
+>>>>>>> f56dbe972dab83eccf5a24b671d3c537694491b1

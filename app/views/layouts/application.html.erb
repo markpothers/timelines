@@ -16,7 +16,7 @@
 
   <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="/">Timelines</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler02" aria-controls="navbarToggler02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -40,7 +40,12 @@
         <a class="nav-link" href=<%=positions_path%>>Positions Index</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
+
+      <%if !current_page?('/')%>
+        <a class="btn btn-primary" href=<%="/#{params[:controller]}/new"%> id="new_button">Create New <%=params[:controller].singularize.titleize%></a>    
+      <%end%>
+    <form class="form-inline my-2 my-lg-0" accept-charset="UTF-8" action="/search" method="get">
+      <input name="utf8" type="hidden" value="&#x2713;">
       <input class="form-control mr-sm-2" type="search" placeholder="Search Indexes">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>

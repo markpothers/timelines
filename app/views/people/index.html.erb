@@ -15,9 +15,15 @@
   <% @people.each do |person|%>
     <tr>
       <td><%= link_to person.name, person_path(person)%></td>
-      <td><%= link_to person.cities.last.name, city_path(person.cities.last)%></td>
-      <td><%= link_to person.employers.last.name, employer_path(person.employers.last)%></td>
-      <td><%= link_to person.positions.last.title, position_path(person.positions.last)%></td>
+      <%if person.cities != []%>
+        <td><%=link_to person.cities.last.name, city_path(person.cities.last)%></td>
+      <%end%>
+      <%if person.employers != []%>
+        <td><%=link_to person.employers.last.name, employer_path(person.employers.last)%></td>
+      <%end%>
+      <%if person.positions != []%>
+        <td><%=link_to person.positions.last.title, position_path(person.positions.last)%></td>
+      <%end%>
     </tr>
   <%end%>
   </tbody>

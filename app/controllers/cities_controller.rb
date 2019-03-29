@@ -3,6 +3,14 @@ class CitiesController < ApplicationController
   def home
   end
 
+  def search
+    @cities = City.all
+    @people = Person.all
+    @employers = Employer.all
+    @positions = Position.all 
+    @events = Event.all
+  end
+
   def index
     @cities = City.all.sort_by{ |city| city.people.length }.reverse
   end

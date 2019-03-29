@@ -10,6 +10,10 @@ class Person < ApplicationRecord
     self.positions.sort_by{|position|position.start_date}
   end
 
+  def sorted_events
+    self.events_as_visitor.sort_by{|event|event.start_date}
+  end
+
   def find_overlap(my_position, their_position)
     if my_position.start_date >= their_position.start_date
       last_start = my_position.start_date

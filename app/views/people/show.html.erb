@@ -1,6 +1,6 @@
 <div class="h1pic">
   <h1><%=@person.name%></h1>
-  <%= image_tag @person.avatar_url, height: "200", class: "face"%>
+  <%= image_tag @person.avatar_url, height: "210", class: "face .img-thumbnail"%>
 </div>
 
    <ul>
@@ -9,64 +9,94 @@
     </li>
   </ul>
 
-<br><br><br>
+<br><br><br><br>
 
-<h3>Personal Timeline:</h3>
- <table>
+<hr><hr><h3>Personal Positions Timeline:</h3>
+
+<table class="table table-striped">
+  <thead class="thead-dark">
     <tr>
-      <th>Position</th><th>Employer</th><th>City</th><th>Arrival Date</th><th>Departure Date</th>
+      <th scope="col">Position Title</th>
+      <th scope="col">Employer</th>
+      <th scope="col">City</th>
+      <th scope="col">Start Date</th>
+      <th scope="col">Finish Date</th>
     </tr>
+  </thead>
   <tbody>
-    <% @person.sorted_positions.each do |p| %>
+  <% @person.sorted_positions.each do |p|%>
     <tr>
-      <td class="left"><%=link_to p.title, position_path(p)%></td><td><%=link_to p.employer.name, employer_path(p.employer)%></td><td><%=link_to p.city.name, city_path(p.city)%></td><td><%= p.start_date.strftime('%B %Y') %></td><td><%= p.finish_date.strftime('%B %Y') %></td>
+      <td><%= link_to p.title, position_path(p)%></td>
+      <td><%= link_to p.employer.name, employer_path(p.employer) %></td>
+      <td><%= link_to p.city.name, city_path(p.city) %></td>
+      <td><%=p.start_date.strftime('%b %Y')%></td>
+      <td><%=p.finish_date >= Date.today ? "Current" : p.finish_date.strftime('%b %Y')%></td>
     </tr>
-    <%end%>
+  <%end%>
   </tbody>
 </table>
+<hr>
 
-<br>
+<%if @person.events_as_visitor != []%>
+<hr>
+<h3>Events Visited:</h3>
 
-<h3>Personal Timeline:</h3>
- <table>
+<table class="table table-striped">
+  <thead class="thead-dark">
     <tr>
-      <th>Reason</th><th>Position</th><th>City</th><th>Arrival Date</th><th>Departure Date</th>
+      <th scope="col">Event Title</th>
+      <th scope="col">City</th>
+      <th scope="col">Start Date</th>
+      <th scope="col">Finish Date</th>
     </tr>
+  </thead>
   <tbody>
-    <% @person.timeline.each do |p| %>
+  <% @person.sorted_events.each do |e|%>
     <tr>
-      <td class="left"><%=p[0]%></td><td class="left"><%=p[1]%></td><td><%=p[2]%></td><td><%= p[3].strftime('%B %Y') %></td><td><%= p[4].strftime('%B %Y')%></td>
+      <td><%= link_to e.title, event_path(e)%></td>
+      <td><%= link_to e.destination.name, city_path(e.destination) %></td>
+      <td><%=e.start_date.strftime('%b %Y')%></td>
+      <td><%=e.finish_date.strftime('%b %Y')%></td>
     </tr>
-    <%end%>
+  <%end%>
   </tbody>
 </table>
-
-<br>
+<hr>
+<%end%>
 
 <% if @person.parallel_positions != []%>
+<hr>
 <h3>Parallel lives:</h3>
 <ul><li>These people have been in the same cities as <%=@person.name%> at the same times:</li></ul>
- <table>
+
+<table class="table table-striped">
+  <thead class="thead-dark">
     <tr>
-      <th>Counterpart</th><th>City</th><th>Overlap beginning</th><th>Overlap end</th>
+      <th scope="col">Counterpart</th>
+      <th scope="col">City</th>
+      <th scope="col">Overlap Start</th>
+      <th scope="col">Overlap End</th>
     </tr>
+  </thead>
   <tbody>
-  
-    <% @person.parallel_positions.sort_by{|instance| instance[2]}.each do |pp| %>
+  <% @person.parallel_positions.sort_by{|instance| instance[2]}.each do |pp| %>
     <tr>
-      <td class="left"><%=link_to pp[0].name, person_path(pp[0])%></td><td><%=pp[1]%></td><td><%= pp[2].strftime('%B %Y') %></td><td><%= pp[3].strftime('%B %Y') %></td>
+      <td><%=link_to pp[0].name, person_path(pp[0])%></td>
+      <td><%=pp[1]%></td>
+      <td><%= pp[2].strftime('%B %Y') %></td>
+      <td><%= pp[3] >= Date.today ? "Current" : pp[3].strftime('%B %Y') %></td>
     </tr>
-    <%end%>
+  <%end%>
   </tbody>
 </table>
+<hr>
 <%end%>
-<br><br>
-
-<br>
 
 <%=form_tag("/people/#{@person.id}/edit", method: "get") do |f| %>
-  <%=submit_tag "Edit"%>
+<a class="indent"><button class="btn btn-primary" type="submit">Edit Person</button></a>
 <%end%>
 <%=form_tag("/people/#{@person.id}", method: "delete") do |f| %>
-  <%=submit_tag "Delete"%>
+  <a><button class="btn btn-primary" type="submit">Delete Person</button></a>
 <%end%>
+<hr>
+

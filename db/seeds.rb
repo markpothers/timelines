@@ -37,7 +37,7 @@ CSV.foreach("./lib/b_corp_impact_data_modified.csv", :encoding => 'windows-1251:
             new_company.save
 
             chosen_person = Person.all.sample
-            if chosen_person.positions = []
+            if chosen_person.positions == []
                 start_date = Faker::Date.between(20.years.ago, Date.today)
             else
                 start_date = chosen_person.positions.last.finish_date
@@ -69,7 +69,7 @@ end
 end
 
 Person.all.each do |p|
-    if p.positions = []
+    if p.positions == []
         start_date = Faker::Date.between(20.years.ago, Date.today)
     else
         start_date = p.positions.last.finish_date

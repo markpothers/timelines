@@ -20,7 +20,7 @@
       <td><%= link_to p.employer.name, employer_path(p.employer) %></td>
       <td><%= link_to p.city.name, city_path(p.city) %></td>
       <td><%=p.start_date.strftime('%b %Y')%></td>
-      <td><%=p.finish_date.strftime('%b %Y')%></td>
+      <td><%=p.finish_date >= Date.today ? "Current" : p.finish_date.strftime('%b %Y')%></td>
     </tr>
   <%end%>
   </tbody>

@@ -1,8 +1,29 @@
-<h1>Welcome to Search Results!</h1>
+<h1 class="c">Search Results</h1>
+<hr>
 
-<h4>This app stores your personal employment and travel history along with those of other people you know.</h4>
-<h4>You can explore the people, cities, and employers in your network and use the app to look for coincidences.</h4>
-<h4>Where you've found yourself living and working in the same place as somebody else in the network, we'll show you.</h4>
-<h4>Click on a link above to start exploring!</h4>
-<div id="home">
-</div>
+<%if @results = []%>
+    <h3>There are no entries that match your search term.</h3>
+<%else%>
+
+    <table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+        <th scope="col">Result</th>
+        <th scope="col">Result Type</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% @results.each do |result|%>
+        <tr>
+            <%if result.class.to_s != "Position" && result.class.to_s != "Event"%>
+                <td><%= link_to result.name, "#{result.class.to_s.pluralize}/#{result.id}"%></td>
+            <%else%>
+                <td><%= link_to result.title, "#{result.class.to_s.pluralize}/#{result.id}"%></td>
+            <%end%>
+        <td><%=result.class.to_s%></td>
+        </tr>
+    <%end%>
+    </tbody>
+    </table>
+
+<%end%>

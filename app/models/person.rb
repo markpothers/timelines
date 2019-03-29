@@ -30,6 +30,7 @@ class Person < ApplicationRecord
     co_locations = co_locations.concat self.co_located(self.events_as_visitor, Position)
     co_locations = co_locations.concat self.co_located(self.sorted_positions, Event)
     co_locations = co_locations.concat self.co_located(self.events_as_visitor, Event)
+    
   end
 
   def co_located(my_location, their_class)

@@ -70,7 +70,7 @@ div {
   position: absolute;
   right: 800px;
   top: 85px;
-} 
+}
 
 h1.c {
   text-align: center;
@@ -78,7 +78,6 @@ h1.c {
 
 th {
   text-align: center;
-  text-indent: 20pt;
 }
 
 th.wrap {
@@ -87,7 +86,6 @@ th.wrap {
 
 td {
   text-align: center;
-  text-indent: 20pt;
 }
 
 td.l {

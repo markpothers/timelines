@@ -3,16 +3,17 @@
 <h4>This app stores your personal employment and travel history along with those of other people you know.</h4>
 <h4>You can explore the people, cities, and employers in your network and use the app to look for coincidences.</h4>
 <h4>Where you've found yourself living and working in the same place as somebody else in the network, we'll show you.</h4>
-<h4>Click on a link above to start exploring!</h4>
+<h4>Log in to start exploring!</h4>
 
-<div id="home">
-<br><br><h4>Please log in:<h4><br>
+<div class="container">
+<br><br>
 <%= form_for :user, url: '/sessions' do |f| %>
-Username: <%= f.text_field :username %><br><br>
-Password: <%= f.password_field :password %><br><br>
-<%= f.submit "Login" %>
+
+Username: <%= f.text_field :username, class: "form-control" %><br><br>
+Password: <%= f.password_field :password, class: "form-control" %><br><br>
+<%= f.submit "Login", class: "btn btn-primary" %>
 <% end %>
 <br><br>
 <%=form_tag("/users/new", method: :get) %>
-<%= submit_tag "Create New User" %>
+<%= submit_tag "Create New User", class: "btn btn-primary" %>
 </div>

@@ -111,7 +111,6 @@ h5 {
 }
 form {
   display: inline;
-  text-indent: 20pt;
 }
 a#new_button {
   margin-right: 1ch;
@@ -124,4 +123,13 @@ a.indent {
 div.container {
   margin-left: 3ch;
   margin-right: 50ch;
+}
+
+div.container_2 {
+  margin-left: 3ch;
+  margin-right: 50ch;
+}
+
+div.button_logout {
+  margin-left: 1ch;
 }

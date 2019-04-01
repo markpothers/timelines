@@ -17,12 +17,13 @@
   <body>
 
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="/">Timelines</a>
+  <a class="navbar-brand" href="#">Timelines</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler02" aria-controls="navbarToggler02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarToggler02">
+    <%if !current_page?('/')%>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item">
         <a class="nav-link" href=<%=cities_path%>>Cities Index</a>
@@ -41,7 +42,7 @@
       </li>
     </ul>
 
-      <%if !current_page?('/') && !current_page?('/search')%>
+      <%unless current_page?('/') || %w(new edit show search).include?(params[:action]) %>
         <a class="btn btn-primary" href=<%="/#{params[:controller]}/new"%> id="new_button">Create New <%=params[:controller].singularize.titleize%></a>
       <%end%>
       
@@ -50,6 +51,12 @@
       <%= text_field_tag :query, params[:query], :class => "form-control mr-sm-2", :placeholder => "Search Indexes", :type => "search"%>
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
+    <div class="button_logout">
+    <%=form_tag("/sessions/#{session[:user_id]}", method: :post) %>
+    <input type="hidden" name="_method" value="DELETE" />
+    <%=submit_tag "End Session", class:"btn btn-danger" %>
+    </div>
+    <%end%>
   </div>
 </nav>
 
@@ -58,11 +65,6 @@
 <%= yield %>
   </body>
   <footer>
-    <hr>
-
-    <%=form_tag("/sessions/#{session[:user_id]}", method: :post) %>
-    <input type="hidden" name="_method" value="DELETE" />
-    <%=submit_tag "Logout" %>
  
   </footer>
 

@@ -16,9 +16,9 @@
     <% @results.each do |result|%>
         <tr>
             <%if result.class.to_s != "Position" && result.class.to_s != "Event"%>
-                <td><%= link_to result.name, "#{result.class.to_s.pluralize}/#{result.id}"%></td>
+                <td><%= link_to result.name, "#{result.class.to_s.downcase.pluralize}/#{result.id}"%></td>
             <%else%>
-                <td><%= link_to result.title, "#{result.class.to_s.pluralize}/#{result.id}"%></td>
+                <td><%= link_to result.title, "#{result.class.to_s.downcase.pluralize}/#{result.id}"%></td>
             <%end%>
         <td><%=result.class.to_s%></td>
         </tr>

@@ -5,8 +5,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
 
 <style>
 
@@ -51,12 +51,15 @@
       <%= text_field_tag :query, params[:query], :class => "form-control mr-sm-2", :placeholder => "Search Indexes", :type => "search"%>
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
-    <div class="button_logout">
-    <%=form_tag("/sessions/#{session[:user_id]}", method: :post) %>
-    <input type="hidden" name="_method" value="DELETE" />
-    <%=submit_tag "End Session", class:"btn btn-danger" %>
-    </div>
+    <%if session[:user_id]%>
+      <div class="button_logout">
+        <%=form_tag("/sessions/#{session[:user_id]}", method: :post) do %>
+          <input type="hidden" name="_method" value="DELETE" />
+          <%=submit_tag "End Session", class:"btn btn-danger" %>
+        <%end%>
+      </div>
     <%end%>
+    <% end %>
   </div>
 </nav>
 

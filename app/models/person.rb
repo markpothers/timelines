@@ -34,7 +34,6 @@ class Person < ApplicationRecord
     co_locations = co_locations.concat self.co_located(self.events_as_visitor, Position)
     co_locations = co_locations.concat self.co_located(self.sorted_positions, Event)
     co_locations = co_locations.concat self.co_located(self.events_as_visitor, Event)
-    
   end
 
   def co_located(my_location, their_class)
@@ -65,6 +64,47 @@ class Person < ApplicationRecord
       end
     end
     coincident_locations
+  end
+
+  def connections
+    connections = self.parallel_positions
+    connections.map{|c| c[0]}
+  end
+
+  def n_degrees(second_person)
+    my_degree = self.connections
+    degree_of_connection =1
+    connection_result = []
+    if my_degree.include?(second_person)
+      return [degree_of_connection, second_person]
+    else
+      their_degree = second_person.connections
+      5.times do
+        degree_of_connection += 1
+        connection_check = check_for_connection(degree_of_connection, my_degree, their_degree)
+        if connection_check.length == 2
+          connection_result = connection_check
+          break
+        else
+          my_degree = connection_check[1]
+          their_degree = connection_check[2]
+        end
+      end
+      return (connection_result != [] ? connection_result : "No connections in 6 degrees")
+    end
+  end
+
+  def check_for_connection(current_degree, first_persons_connections, second_persons_connections)
+    potential = first_persons_connections & second_persons_connections
+    if potential != []
+      return [current_degree, potential]
+    else
+      return [0, next_degree(first_persons_connections), next_degree(second_persons_connections)]
+    end
+  end
+
+  def next_degree(nth_degree)
+    nth_degree.map{|p| p.connections}.flatten.uniq
   end
 
   def timeline

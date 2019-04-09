@@ -12,7 +12,7 @@ people = []
     people << RandomUserGenerator.generate
 end
 
-people.each do |user| 
+people.each do |user|
     Person.create({
         name: "#{user.name.first.titleize} #{user.name.last.titleize}",
         birthday: user.dob.date,
@@ -22,7 +22,7 @@ end
 
 stored_name = nil
 CSV.foreach("./lib/b_corp_impact_data_modified.csv", :encoding => 'windows-1251:utf-8') do |row|
-    if stored_name != nil 
+    if stored_name != nil
         if stored_name != row[0].to_s && row[9].to_s.exclude?(',') && row[9].to_s.exclude?('?') && row[9].to_s.exclude?('(') && row[9].to_s.exclude?('1') && !row[9].to_s.blank?
             new_city = City.find_or_create_by(name: row[9].to_s.downcase.titleize)
             new_city.country = row[7].to_s.blank? ? "-" : row[7].to_s.downcase.titleize
@@ -52,10 +52,10 @@ CSV.foreach("./lib/b_corp_impact_data_modified.csv", :encoding => 'windows-1251:
                 description: Faker::Job.key_skill,
                 start_date: start_date,
                 finish_date: Faker::Date.between(start_date, 1.year.from_now)
-            )            
+            )
         end
     end
-    stored_name = row[0] 
+    stored_name = row[0]
 end
 
 500.times do
@@ -85,4 +85,4 @@ Person.all.each do |p|
         start_date: start_date,
         finish_date: Faker::Date.between(start_date, 1.year.from_now)
     )
-end        
+end
